@@ -10,8 +10,6 @@
     <!-- Open Graph -->
     <meta property="og:title"
         content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
-    <meta property="og:title"
-        content="{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}">
     {% case page.layout %}
     {% when 'post' %}
     <meta property="og:type" content="article">
@@ -35,7 +33,7 @@
     <meta property="og:site_name" content="{{ site.SEOTitle }}">
 
     <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
-
+    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
     <!-- Web App Manifest -->
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">
 
