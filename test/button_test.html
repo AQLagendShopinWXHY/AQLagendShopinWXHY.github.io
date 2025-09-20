@@ -206,16 +206,11 @@ transform: translateY(2px);
 
             (async () => {
             const json_data = await fetchData("./json/CARD_Shouhou_GETCard_URL.json");
-            console.log(modalData,json_data);
+                if(modalData==="in_GetCard"){
+                    //修改模态框中的相关内容
+                    getCarddatahandle(modal, json_data);
+                }
             })();
-            // fetchData("./json/CARD_Shouhou_GETCard_URL.json",function(data) {
-
-    
-            // });
-
-                // updateModalContent(modal,json_data.title,json_data.content);
-
-            // updateModalContent(modal,json_data);
         }
 
         // 关闭模态框
@@ -235,6 +230,11 @@ transform: translateY(2px);
                 resolve(data);
             });
     });
+        }
+
+        function getCarddatahandle(modal, data){
+            //创建按钮的生成事件
+            console.log(modalData,data);
         }
 
         //修改模态框中的相关内容
