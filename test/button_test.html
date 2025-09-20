@@ -191,7 +191,7 @@ transform: translateY(2px);
                     var modalData = this.dataset.modalData; // 获取自定义数据属性
 
                     if (action === "open") {
-                        openModal(targetModal);
+                        openModal(targetModal,modalData);
                     } else if (action === "close") {
                         closeModal(targetModal);
                     }
@@ -200,11 +200,12 @@ transform: translateY(2px);
         });
 
         // 打开模态框
-        function openModal(modal) {
+        function openModal(modal,modalData) {
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
-            fetchData("./json/CARD_Shouhou_GETCard_URL.json")
-            // updateModalContent(modal, "我是标题", "我是内容");
+            json_data=fetchData("./json/CARD_Shouhou_GETCard_URL.json")
+            console.log(modalData,json_data);
+            // updateModalContent(modal,json_data);
         }
 
         // 关闭模态框
@@ -222,7 +223,7 @@ transform: translateY(2px);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var data = JSON.parse(xhr.responseText);
-                    console.log(data);
+                    return data;
                 }
             };
             xhr.send();
