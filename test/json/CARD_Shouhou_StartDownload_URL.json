@@ -1,0 +1,26 @@
+[
+  {
+    "where": "My",
+    "desc": "My辅助",
+    "use_platform": "Windows、Android",
+    "Card_need": "需卡密",
+    "URL": "https://www.123684.com/s/Xn2Rjv-8g0F3",
+    "button_color": "#FF6900"
+  },
+  {
+    "where": "mini",
+    "desc": "迷你辅助",
+    "use_platform": "Windows",
+    "Card_need": "进阶版功能需卡密",
+    "URL": "https://www.123684.com/s/Xn2Rjv-Kg0F3",
+    "button_color": "#25B067"
+  },
+  {
+    "where": "xiaokeqi",
+    "desc": "小氪奇辅助",
+    "use_platform": "Windows、Android",
+    "Card_need": "电脑版无需卡密、手机版需卡密",
+    "URL": "https://www.123684.com/s/Xn2Rjv-0g0F3",
+    "button_color": "#25B066"
+  }
+]
