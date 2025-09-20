@@ -203,7 +203,7 @@ transform: translateY(2px);
         function openModal(modal,modalData) {
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
-            json_data=fetchData("./json/CARD_Shouhou_GETCard_URL.json")
+            var json_data=fetchData("./json/CARD_Shouhou_GETCard_URL.json")
             console.log(modalData,json_data);
             // updateModalContent(modal,json_data);
         }
