@@ -203,11 +203,12 @@ transform: translateY(2px);
         function openModal(modal,modalData) {
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
-            json_data=fetchData("./json/CARD_Shouhou_GETCard_URL.json",function(json_data){
+            fetchData("./json/CARD_Shouhou_GETCard_URL.json",function(data) {
             console.log(json_data);
             console.log(modalData);
-                // updateModalContent(modal,json_data.title,json_data.content);
             });
+
+                // updateModalContent(modal,json_data.title,json_data.content);
 
             // updateModalContent(modal,json_data);
         }
