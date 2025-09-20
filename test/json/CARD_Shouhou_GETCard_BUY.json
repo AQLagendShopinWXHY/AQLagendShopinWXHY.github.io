@@ -1,0 +1,23 @@
+[
+  {
+    "where": "taibao",
+    "desc": "淘宝-年卡",
+    "URL": "https://alds.agiso.com/Tiqu/2M3Ura",
+    "button_color": "#FF6900"
+  },
+  {
+    "where": "weidian",
+    "desc": [
+      "微店-年卡",
+      "微店-临时卡"
+    ],
+    "URL": [
+      "https://aldsweidian.agiso.com/t/bs51k5",
+      "https://aldsweidian.agiso.com/t/bs51k4"
+    ],
+    "button_color": [
+      "#25B067",
+      "#25B066"
+    ]
+  }
+]
