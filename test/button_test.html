@@ -203,8 +203,9 @@ transform: translateY(2px);
         function openModal(modal,modalData) {
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
-            var json_data=fetchData("./json/CARD_Shouhou_GETCard_URL.json")
-            console.log(modalData,json_data);
+            json_data=fetchData("./json/CARD_Shouhou_GETCard_URL.json")
+            console.log(json_data);
+            console.log(modalData);
             // updateModalContent(modal,json_data);
         }
 
