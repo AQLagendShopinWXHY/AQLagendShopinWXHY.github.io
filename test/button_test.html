@@ -203,10 +203,15 @@ transform: translateY(2px);
         function openModal(modal,modalData) {
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
-            fetchData("./json/CARD_Shouhou_GETCard_URL.json",function(data) {
-            console.log(data);
-            console.log(modalData);
-            });
+
+            (async () => {
+            const json_data = await fetchData("./json/CARD_Shouhou_GETCard_URL.json");
+            console.log(modalData,json_data);
+            })();
+            // fetchData("./json/CARD_Shouhou_GETCard_URL.json",function(data) {
+
+    
+            // });
 
                 // updateModalContent(modal,json_data.title,json_data.content);
 
@@ -222,16 +227,14 @@ transform: translateY(2px);
         }
 
         //获取json数据
-        function fetchData(url,callback) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", url, true);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === 4 && xhr.status === 200) {
-                    var data = JSON.parse(xhr.responseText);
-                    callback(data);
-                }
-            };
-            xhr.send();
+        function fetchData(url) {
+            return new Promise((resolve,reject)=>{
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                resolve(data);
+            });
+    });
         }
 
         //修改模态框中的相关内容
