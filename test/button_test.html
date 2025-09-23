@@ -154,7 +154,7 @@ transform: translateY(2px);
     </a>
 		下载辅助
 </button>
-<button class="button button2" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_GetCard">
+<button class="button button2" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_GetCard_Buy">
     <span class="fa-stack fa-lg">
     <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
     </span>
@@ -229,8 +229,8 @@ transform: translateY(2px);
             modal.querySelector(".modal-content").classList.remove("modal-hide");
 
             (async () => {
-            const json_data = await fetchData("./json/CARD_Shouhou_GETCard_URL.json");
-                if(modalData==="in_GetCard"){
+            const json_data = await fetchData("./json/CARD_Shouhou_GETCard_BUY.json");
+                if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
                     getCarddatahandle(modal, json_data);
                 }
