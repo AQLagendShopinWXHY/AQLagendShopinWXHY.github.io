@@ -189,7 +189,7 @@ transform: translateY(2px);
         <div class="modal-content modal-normal">
             <span class="close">&times;</span>
             <h3>模态框标题</h3>
-            <table style="border: 1px solid rgba(0, 0, 0);">模态框表格</table>
+            <table style="border: 1px solid rgba(0, 0, 0);"></table>
             <p>模态框内容。</p>
         </div>
     </div>
@@ -267,20 +267,21 @@ transform: translateY(2px);
             var data_key = Object.keys(data[0]);
             var data_keyFirst = Object.keys(data[0])[0];
             
-            for(i=0;i<data.length;i++){
+        for (i = 0; i < data.length; i++) {
                 //大循环，迷你、my、氪奇
-                for(j=0;j<data_key.length;j++){
+                content += "<tr>"; // 每一行开始
+                for (j = 0; j < data_key.length; j++) {
                     //小循环、小参数
                     var part = Object.keys(data[i])[j];
                     //输出的是where、desc、buycard、buttoncolor、url，一直到循环结束
 
                     if(part === data_keyFirst){
                         // console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
-                        content= content+"<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part]
+                        content+= "<td colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part]+"</td>"
                     }else{
                         for(k=0;k<data[i][part].length;k++){
                         // console.log("<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>")
-                        content= content+"<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>"
+                        content += "<td colspan='"+pd_null(data[i][part],k)+1+"'>"+data[i][part][k]+"</td>"
                         if(k= data[i][part].length-1){
                             content= content+"</tr>"
                         }
