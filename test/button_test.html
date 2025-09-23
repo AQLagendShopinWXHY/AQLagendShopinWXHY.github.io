@@ -279,7 +279,7 @@ transform: translateY(2px);
                         content+= "<td colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part]+"</td>"
                     }else{
                         for(k=0;k<data[i][part].length;k++){
-                        content += "<td colspan='"+pd_null(data[i][part],k)+1+"'>"+data[i][part][k]+"</td>"
+                        content += "<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>"
                         if(k= data[i][part].length-1){
                             content= content+"</tr>"
                         }
