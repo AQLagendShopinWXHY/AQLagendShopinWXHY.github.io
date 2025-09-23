@@ -259,7 +259,7 @@ transform: translateY(2px);
         }
 
         function getCarddatahandle(modal, data){
-            console.log(modal,data);
+            // console.log(modal,data);
             //测试获取到的标签id和异步获取到的json
             //获取完整的标识符key
             //标记组成tr的部分
@@ -278,12 +278,12 @@ transform: translateY(2px);
             // 其余字段同一行显示同一索引内容
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
-                console.log(data[i][part][k])
                 if(data[i][part][k]===null || part==="button_color"){
                     continue;
                 }
                 if(part==="URL"){
-                    content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>"+"<button class='button' 'style='background-color: "+data[i][data_key[j+1]][k]+";'><a href='" + data[i][part][k] + "' target='_blank'/>点击跳转</button>"+ "</td>";
+                    console.log(data[i][data_key[j+1]][k])
+                    content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>"+"<a href='" + data[i][part][k] + "' target='_blank'><button class='button' 'style='background-color:'"+data[i][data_key[j+1]][k]+";'>点击跳转</button>"+ "</a></td>";
                     continue;
                 }
 
