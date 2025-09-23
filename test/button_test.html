@@ -271,21 +271,20 @@ transform: translateY(2px);
                 for(j=0;j<data_key.length;j++){
                     //小循环、小参数
                     if(Object.keys(data[i])[j] === data_keyFirst){
-                        if(pd_null(data,i,Object.keys(data[i])[j])){
-                            console.log("这是tr/true");
-                        }else{
-                            console.log("这是tr/false");
-                        }
+                        console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]]+"'>")
+                        console.log("</tr>")
                     }else{
-                        if(pd_null(data,i,Object.keys(data[i])[j])){
-                            console.log("这是td/true");
-                        }else{
-                            console.log("这是td/false");
-                        }
+                        console.log("<td>")
+                        console.log("</td>")
                     }
                 }
             }
 
+                                    // if(pd_null(data,i,Object.keys(data[i])[j])){
+                        //     console.log("这是tr/true");
+                        // }else{
+                        //     console.log("这是tr/false");
+                        // }
             //判定是否是where，是的话生成<tr>,否的话生成<td>
             //判断下一个是否为null，是的话进行循环直到不是null或者到length最大值
             //根据length-能取到值的这个值来判断colspan的数
