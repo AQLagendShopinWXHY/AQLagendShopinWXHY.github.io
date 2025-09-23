@@ -1,0 +1,71 @@
+[
+  {
+    "where": "My",
+    "desc": [
+      "My辅助",
+      null,
+      null
+    ],
+    "use_platform": [
+      "Windows、Android",
+      null,
+      null
+    ],
+    "Card_need": [
+      "需卡密",
+      null,
+      null
+    ],
+    "platform": [
+      "电脑版（Windows32位）",
+      "电脑版（Windows64位）",
+      "手机版（Android）"
+    ],
+    "URL": [
+      "https://www.123684.com/s/Xn2Rjv-wG0F3",
+      "https://www.123684.com/s/Xn2Rjv-MG0F3",
+      "https://www.123684.com/s/Xn2Rjv-gG0F3"
+    ],
+    "button_color": [
+      "#FF6900",
+      "#FF6900",
+      "#FF6900"
+    ]
+  },
+  {
+    "where": "mini",
+    "desc": "迷你辅助",
+    "use_platform": "Windows",
+    "Card_need": "进阶版功能需卡密",
+    "platform": "电脑版（Windows）",
+    "URL": "https://www.123684.com/s/Xn2Rjv-FG0F3",
+    "button_color": "#28cee5"
+  },
+  {
+    "where": "xiaokeqi",
+    "desc": [
+      "小氪奇辅助",
+      null
+    ],
+    "use_platform": [
+      "Windows、Android",
+      null
+    ],
+    "Card_need": [
+      "电脑版无需卡密、手机版需卡密",
+      null
+    ],
+    "platform": [
+      "电脑版（Windows）",
+      "手机版（Android）"
+    ],
+    "URL": [
+      "https://www.123684.com/s/Xn2Rjv-YG0F3",
+      "https://www.123684.com/s/Xn2Rjv-GG0F3"
+    ],
+    "button_color": [
+      "#9f9f9f",
+      "#9f9f9f"
+    ]
+  }
+]
