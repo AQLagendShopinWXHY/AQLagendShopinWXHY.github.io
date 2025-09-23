@@ -189,7 +189,7 @@ transform: translateY(2px);
         <div class="modal-content modal-normal">
             <span class="close">&times;</span>
             <h3>模态框标题</h3>
-            <p>模态框内容。</p>
+            <span>模态框内容。</span>
         </div>
     </div>
 
@@ -318,7 +318,7 @@ transform: translateY(2px);
         //修改模态框中的相关内容
         function updateModalContent(modal, title, content) {
             var titleElement = modal.querySelector("h3");
-            var contentElement = modal.querySelector("p");
+            var contentElement = modal.querySelector("span");
 
             if (titleElement) {
                 titleElement.textContent = title;
