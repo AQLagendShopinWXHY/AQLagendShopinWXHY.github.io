@@ -318,12 +318,12 @@ transform: translateY(2px);
 //         }
 
 
-        function pd_null(data,inround){
+        function pd_null(data, inround) {
             let count = 0;
-            if (inround + 1 < data.length && data[inround + 1] === null && data[inround] != null) {
-                count+= 1 + pd_null(data, inround + 1);
+            for (let i = inround + 1; i < data.length && data[i] === null; i++) {
+                count++;
             }
-            return count
+            return count + 1; // 最终返回时多算1
         }
 
         //修改模态框中的相关内容
