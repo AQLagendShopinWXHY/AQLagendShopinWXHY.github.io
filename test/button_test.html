@@ -189,7 +189,7 @@ transform: translateY(2px);
         <div class="modal-content modal-normal">
             <span class="close">&times;</span>
             <h3>模态框标题</h3>
-            <table style="border: 1px solid #000; border-collapse: collapse;"></table>
+            <table style="border: 1px solid #000; border-collapse: collapse; margin: 0 auto;"></table>
             <p>模态框内容。</p>
         </div>
     </div>
@@ -283,10 +283,10 @@ transform: translateY(2px);
                 }
                 if(part==="URL"){
                     console.log(data[i][data_key[j+1]][k])
-                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;'>" +
-    "<a href='" + data[i][part][k] + "' target='_blank'>" +
-    "<button class='button' style='background-color:" + data[i][data_key[j+1]][k] + ";'>点击跳转</button>" +
-    "</a></td>";
+                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:20%'>" +
+                        "<a href='" + data[i][part][k] + "' target='_blank'>" +
+                        "<button class='button' style='background-color:" + data[i][data_key[j+1]][k] + ";'>点击跳转</button>" +
+                        "</a></td>";
                     continue;
                 }
 
