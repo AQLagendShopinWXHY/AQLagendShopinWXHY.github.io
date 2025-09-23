@@ -258,34 +258,51 @@ transform: translateY(2px);
     });
         }
 
-        function getCarddatahandle(modal, data){
-            console.log(modal,data);
-            //测试获取到的标签id和异步获取到的json
-            //获取完整的标识符key
-            //标记组成tr的部分
-            var content = "";
-            var data_key = Object.keys(data[0]);
-            var data_keyFirst = Object.keys(data[0])[0];
-            var arrLength = data[0][data_key[1]].length; // 假设所有数组字段长度一致
-            
+        function getCarddatahandle(modal, data) {
+    var content = "";
+    var data_key = Object.keys(data[0]);
+    var data_keyFirst = data_key[0];
+    var arrLength = data[0][data_key[1]].length; // 假设所有数组字段长度一致
+
     for (var i = 0; i < data.length; i++) {
-        // 第一列rowspan
         for (var k = 0; k < arrLength; k++) {
             content += "<tr>";
+            // 第一列只在第一行输出
             if (k === 0) {
                 content += "<td rowspan='" + arrLength + "' style='border:1px solid #000;'>" + data[i][data_keyFirst] + "</td>";
             }
-            // 其余字段同一行显示同一索引内容
+            // 其余字段
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
-                content += "<td style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
+                // 只在非null时输出td，并合并后续null
+                if (data[i][part][k] !== null) {
+                    var rowspan = 1;
+                    // 统计后面连续null数量
+                    for (var m = k + 1; m < arrLength && data[i][part][m] === null; m++) {
+                        rowspan++;
+                    }
+                    content += "<td rowspan='" + rowspan + "' style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
+                }
             }
             content += "</tr>";
+            // 跳过已合并的null行
+            // 找到每个字段最长的null段，跳过这些行
+            let maxSkip = 0;
+            for (var j = 1; j < data_key.length; j++) {
+                var part = data_key[j];
+                if (data[i][part][k] !== null) {
+                    var skip = 0;
+                    for (var m = k + 1; m < arrLength && data[i][part][m] === null; m++) {
+                        skip++;
+                    }
+                    if (skip > maxSkip) maxSkip = skip;
+                }
+            }
+            k += maxSkip;
         }
     }
     return content;
-
-        }
+}
 
         function pd_null(data,inround){
             if (inround + 1 < data.length && data[inround + 1] === null && data[inround] != null) {
