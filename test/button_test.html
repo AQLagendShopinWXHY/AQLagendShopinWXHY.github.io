@@ -279,6 +279,9 @@ transform: translateY(2px);
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
                 console.log(data[i][part][k])
+                if(data[i][part][k]===null){
+                    continue;
+                }
                 content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
             }
             content += "</tr>";
