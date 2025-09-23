@@ -270,13 +270,26 @@ transform: translateY(2px);
                 //大循环，迷你、my、氪奇
                 for(j=0;j<data_key.length;j++){
                     //小循环、小参数
-                    if(Object.keys(data[i])[j] === data_keyFirst){
-                        console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]]+"'>")
-                        console.log("</tr>")
+                    var part = Object.keys(data[i])[j];
+                    //输出的是where、desc、buycard、buttoncolor、url，一直到循环结束
+
+                    if(part === data_keyFirst){
+                        console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
                     }else{
-                        console.log("<td>")
+
+                        if(j!=data_key.length-1){
+                            console.log("<td colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
+                        }else{
+                            console.log("<td>")
+                            }
                         console.log("</td>")
+
                     }
+
+                    if(j==data_key.length-1){
+                        console.log("</tr>")
+                    }
+                    //全部完成后必须加个结尾
                 }
             }
 
