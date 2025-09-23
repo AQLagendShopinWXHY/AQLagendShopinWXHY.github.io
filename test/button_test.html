@@ -270,15 +270,19 @@ transform: translateY(2px);
                 //大循环，迷你、my、氪奇
                 for(j=0;j<data_key.length;j++){
                     //小循环、小参数
-                    if(Object.keys(data[i])[j] === data_keyFirst){
-                        console.log("这是tr");
-                        if(pd_null(data,i,Object.keys(data[i])[j])){
-                            console.log("true");
-                        }else{
-                            console.log("false");
-                        }
+                            if(Object.keys(data[i])[j] === data_keyFirst){
+                                if(pd_null(data,i,Object.keys(data[i])[j])){
+                                    console.log("这是tr/true");
+                                }else{
+                                    console.log("这是tr/false");
+                                }
                     }else{
-                        console.log("这是td");
+                            if(Object.keys(data[i])[j] === data_keyFirst){
+                                if(pd_null(data,i,Object.keys(data[i])[j])){
+                                    console.log("这是td/true");
+                                }else{
+                                    console.log("这是td/false");
+                                }
                     }
                 }
             }
