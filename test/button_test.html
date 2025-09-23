@@ -189,7 +189,8 @@ transform: translateY(2px);
         <div class="modal-content modal-normal">
             <span class="close">&times;</span>
             <h3>模态框标题</h3>
-            <span>模态框内容。</span>
+            <table>模态框表格</table>
+            <p>模态框内容。</p>
         </div>
     </div>
 
@@ -262,7 +263,7 @@ transform: translateY(2px);
             //测试获取到的标签id和异步获取到的json
             //获取完整的标识符key
             //标记组成tr的部分
-            var content = "<table>"
+            var content = ""
             var data_key = Object.keys(data[0]);
             var data_keyFirst = Object.keys(data[0])[0];
             
@@ -287,11 +288,6 @@ transform: translateY(2px);
 
                     }
 
-                    if(j==data_key.length-1){
-                        // console.log("</tr>")
-                        content= content+"</table>"
-                    }
-                    //全部完成后必须加个结尾
                 }
             }
 
@@ -318,7 +314,8 @@ transform: translateY(2px);
         //修改模态框中的相关内容
         function updateModalContent(modal, title, content) {
             var titleElement = modal.querySelector("h3");
-            var contentElement = modal.querySelector("span");
+            var contentElement = modal.querySelector("table");
+            // var contentElement = modal.querySelector("p");
 
             if (titleElement) {
                 titleElement.textContent = title;
