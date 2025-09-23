@@ -273,7 +273,9 @@ transform: translateY(2px);
                     if(Object.keys(data[i])[j] === data_keyFirst){
                         console.log("这是tr");
                         if(pd_null(data,i,Object.keys(data[i])[j])){
-                            console.log("");
+                            console.log("true");
+                        }else{
+                            console.log("false");
                         }
                     }else{
                         console.log("这是td");
@@ -289,13 +291,13 @@ transform: translateY(2px);
         }
 
         function pd_null(data,outround,inround){
-            console.log(data[outround][inround]);
-            // if(data.length>outround){
-            //     if(data[outround+1].inround===null){
-            //         return true;
-            //     }
-            // }
-            //     return false;
+            // console.log(data[outround][inround]);
+            if(data.length>outround){
+                if(data[outround+1][inround]===null){
+                    return true;
+                }
+            }
+                return false;
         }
 
         //修改模态框中的相关内容
