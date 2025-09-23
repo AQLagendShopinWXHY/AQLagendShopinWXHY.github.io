@@ -293,7 +293,8 @@ transform: translateY(2px);
         function pd_null(data,outround,inround){
             // console.log(data[outround][inround]);
             if(data.length>outround){
-                if(data[outround+1][inround]===null){
+                if(data[outround+1][inround]!=null){
+                    console.log(data[outround][inround],data[outround+1][inround])
                     return true;
                 }
             }
