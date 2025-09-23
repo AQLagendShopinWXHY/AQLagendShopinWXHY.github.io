@@ -276,13 +276,10 @@ transform: translateY(2px);
                     //输出的是where、desc、buycard、buttoncolor、url，一直到循环结束
 
                     if(part === data_keyFirst){
-                        // console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
                         content+= "<td colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part]+"</td>"
                     }else{
                         for(k=0;k<data[i][part].length;k++){
-                        // console.log("<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>")
-                        console.log(pd_null(data[i][part],k)+1)
-                        content += "<td colspan='"+pd_null(data[i][part],k)+"'>"+data[i][part][k]+"</td>"
+                        content += "<td colspan='"+pd_null(data[i][part],k)+1+"'>"+data[i][part][k]+"</td>"
                         if(k= data[i][part].length-1){
                             content= content+"</tr>"
                         }
