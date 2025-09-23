@@ -232,7 +232,8 @@ transform: translateY(2px);
             const json_data = await fetchData("./json/CARD_Shouhou_GETCard_BUY.json");
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
-                    getCarddatahandle(modal, json_data);
+                    var title = "卡密购买"
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
                 }
             })();
         }
@@ -261,8 +262,7 @@ transform: translateY(2px);
             //测试获取到的标签id和异步获取到的json
             //获取完整的标识符key
             //标记组成tr的部分
-
-            var title = "卡密购买"
+            var content = ""
             var data_key = Object.keys(data[0]);
             var data_keyFirst = Object.keys(data[0])[0];
             
@@ -274,16 +274,19 @@ transform: translateY(2px);
                     //输出的是where、desc、buycard、buttoncolor、url，一直到循环结束
 
                     if(part === data_keyFirst){
-                        console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
+                        // console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
+                        content= content+"<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part]
                     }else{
                             for(k=0;k<data[i][part].length;k++){
-                            console.log("<td colspan='"+pd_null(data[i][part],k)+"'>"+data[i][part][k]+"</td>")
+                            // console.log("<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>")
+                            content= content+"<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>"
                             }
 
                     }
 
                     if(j==data_key.length-1){
-                        console.log("</tr>")
+                        // console.log("</tr>")
+                        content= content+"</tr>"
                     }
                     //全部完成后必须加个结尾
                 }
@@ -299,10 +302,11 @@ transform: translateY(2px);
             //根据length-能取到值的这个值来判断colspan的数
             //总体顺序是从左到右，从上到下依次生成
             //感觉用递归好点？
+            return content;
         }
 
         function pd_null(data,inround){
-            if (inround + 1 < data.length && data[inround + 1] === null) {
+            if (inround + 1 < data.length && data[inround + 1] === null && data[inround] != null) {
                 return 1 + pd_null(data, inround + 1);
             }
             return 0;
