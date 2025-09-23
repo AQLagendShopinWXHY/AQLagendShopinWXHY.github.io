@@ -317,8 +317,9 @@ transform: translateY(2px);
 
 //         }
 
+
         function pd_null(data,inround){
-            let count = 1;
+            let count = 0;
             if (inround + 1 < data.length && data[inround + 1] === null && data[inround] != null) {
                 count+= 1 + pd_null(data, inround + 1);
             }
