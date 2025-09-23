@@ -278,12 +278,12 @@ transform: translateY(2px);
                         // console.log("<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part])
                         content= content+"<tr colspan='"+data[i][Object.keys(data[i])[j+1]].length+"'>"+data[i][part]
                     }else{
-                            for(k=0;k<data[i][part].length;k++){
-                            // console.log("<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>")
-                            content= content+"<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>"
-                            if(k= data[i][part].length-1){
-                                content= content+"</tr>"
-                            }
+                        for(k=0;k<data[i][part].length;k++){
+                        // console.log("<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>")
+                        content= content+"<td colspan='"+(pd_null(data[i][part],k)+1)+"'>"+data[i][part][k]+"</td>"
+                        if(k= data[i][part].length-1){
+                            content= content+"</tr>"
+                        }
                             }
 
                     }
@@ -301,6 +301,7 @@ transform: translateY(2px);
             //根据length-能取到值的这个值来判断colspan的数
             //总体顺序是从左到右，从上到下依次生成
             //感觉用递归好点？
+            console.log(content)
             return content;
         }
 
@@ -321,7 +322,8 @@ transform: translateY(2px);
                 titleElement.textContent = title;
             }
             if (contentElement) {
-                contentElement.textContent = content;
+                contentElement.innerHTML = content;
+                // contentElement.textContent = content;
             }
         }
         // 监听模态框的关闭时事件
