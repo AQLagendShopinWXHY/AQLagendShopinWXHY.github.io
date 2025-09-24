@@ -285,12 +285,12 @@ transform: translateY(2px);
                 if(part==="ingroup_URL"){
                     if(data[i][part][k] != null){
                     content += "<td style='border:1px solid #000;width:25%'><center>" +
-                                                "<ul><li><a href='" + data[i][part] + "' target='_blank'>"+
+                                                "<a href='" + data[i][part] + "' target='_blank'>"+
                                                 '<span class="fa-stack fa-lg">'+
-                                                    '<i class="fa fa-circle fa-stack-2x"></i>'+
-                                                    '<i class="fa fa-stack-1x fa-qq button2"></i>'+
+                                                    '<i class="fa fa-circle fa-stack-2x button2"></i>'+
+                                                    '<i class="fa fa-stack-1x fa-qq fa-inverse "></i>'+
                                                 "</span>"+
-                                                "</a></li></ul>"+
+                                                "</a>"+
                                             "</center></td>";
                     continue;
                     }else{
