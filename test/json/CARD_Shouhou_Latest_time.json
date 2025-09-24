@@ -1,18 +1,18 @@
 [
   {
-    "where": "GETCard_URL",
+    "where": "in_GetCard_Get",
     "time": 20250923
   },
   {
-    "where": "StartDownload_URL",
+    "where": "in_Download",
     "time": 20250923
   },
   {
-    "where": "AfterCard_QQGroup",
+    "where": "in_AfterCard_QQgroup",
     "time": 20250923
   },
   {
-    "where": "GETCard_BUY",
+    "where": "in_GetCard_Buy",
     "time": 20250923
   }
 ]
