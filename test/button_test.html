@@ -218,23 +218,25 @@ transform: translateY(2px);
             modal.querySelector(".modal-content").classList.remove("modal-hide");
 
             (async () => {
+            const tip = await fetchData("./json/CARD_Shouhou_Tips.json");
+            const tips = tip[modalData].Tips;
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
                     const json_data = await fetchData("./json/CARD_Shouhou_GETCard_BUY.json");
                     var title = "卡密购买"
-                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips)
                 }else if(modalData==="in_GetCard_Get"){
                     const json_data = await fetchData("./json/CARD_Shouhou_GETCard_URL.json");
                     var title = "卡密提取"
-                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips)
                 }else if(modalData==="in_AfterCard_QQgroup"){
                     const json_data = await fetchData("./json/CARD_Shouhou_AfterCard_QQGroup.json");
                     var title = "加入售后群"
-                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips)
                 }else if(modalData==="in_Download"){
                     const json_data = await fetchData("./json/CARD_Shouhou_StartDownload_URL.json");
                     var title = "辅助下载"
-                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips)
                                     }
             })();
         }
@@ -377,10 +379,10 @@ transform: translateY(2px);
         }
 
         //修改模态框中的相关内容
-        function updateModalContent(modal, title, content) {
+        function updateModalContent(modal, title, content,tips) {
             var titleElement = modal.querySelector("h3");
             var contentElement = modal.querySelector("table");
-            // var contentElement = modal.querySelector("p");
+            var tipsElement = modal.querySelector("p");
 
             if (titleElement) {
                 titleElement.textContent = title;
@@ -388,6 +390,12 @@ transform: translateY(2px);
             if (contentElement) {
                 contentElement.innerHTML = content;
                 // contentElement.textContent = content;
+            }
+            if (tipsElement) {
+                tipsElement.textContent = tips;
+                // contentElement.textContent = content;
+            }else{
+                tipsElement.textContent = "无";
             }
         }
         // 监听模态框的关闭时事件
