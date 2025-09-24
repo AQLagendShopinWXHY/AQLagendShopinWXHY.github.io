@@ -157,12 +157,12 @@ transform: translateY(2px);
     <i class="fa fa-shopping-bag fa-stack-1x fa-inverse"></i>
     </span>
 购买卡密</button>
-<button class="button button2" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_GetCard_Get">
+<button class="button button2" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_GetCard_Get">
     <span class="fa-stack fa-lg">
-    <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
-提取卡密
-</a>
-</button>
+    <i class="fa credit-card fa-stack-1x fa-inverse"></i>
+    </span>
+提取卡密</button>
+
 <button class="button button3" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_AfterCard_QQgroup">
     <span class="fa-stack fa-lg">
     <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
@@ -285,20 +285,11 @@ transform: translateY(2px);
                     continue;
                 }
                 if(part==="URL"){
-                    console.log(data[i][data_key[j+1]][k])
-                    if(arrLength != 1){
                     content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:25%'>" +
                                             "<a href='" + data[i][part][k] + "' target='_blank'>" +
                                             "<button class='button' style='background-color:" + data[i][data_key[j+1]][k] + ";'>点击跳转</button>" +
                                             "</a></td>";
                     continue;
-                    }else{
-                    content += "<td style='border:1px solid #000;width:25%'>" +
-                                            "<a href='" + data[i][part] + "' target='_blank'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+1]] + ";'>点击跳转</button>" +
-                                            "</a></td>";
-                    continue;
-                    }
                     
                 }
 
