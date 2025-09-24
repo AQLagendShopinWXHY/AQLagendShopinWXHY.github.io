@@ -30,6 +30,28 @@
   </li>
   {% endif %}
 
+    {% if site.bilibili_username %}
+  <li>
+    <a target="_blank" href="https://space.bilibili.com/{{ site.qqchannel_username }}">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa iconfont icon-bilibili fa-stack-1x fa-inverse"></i>
+      </span>
+    </a>
+  </li>
+  {% endif %}
+
+    {% if site.qqgroup %}
+  <li>
+  <button class="button button3" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_AfterCard_QQgroup">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+      </span>
+    </button>
+  </li>
+  {% endif %}
+
   {% if site.twitter_username %}
   <li>
     <a href="https://twitter.com/{{ site.twitter_username }}">

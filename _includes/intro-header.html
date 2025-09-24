@@ -107,6 +107,7 @@
           <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
           <span class="subheading">{{ page.description }}</span>
 
+          <!-- 要改成只有首页才生效 -->
           {% if page.title!=404 %}
 
             <button class="button button1" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_Download">
