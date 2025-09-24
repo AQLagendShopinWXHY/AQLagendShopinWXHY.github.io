@@ -219,8 +219,7 @@ transform: translateY(2px);
 
             (async () => {
             const tip = await fetchData("./json/CARD_Shouhou_Tips.json");
-            console.log(tip)
-            const tips = tip[modalData][1]["Tips"];
+            const tips = check_Tips(tip,modalData)
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
                     const json_data = await fetchData("./json/CARD_Shouhou_GETCard_BUY.json");
@@ -259,6 +258,15 @@ transform: translateY(2px);
                 resolve(data);
             });
     });
+        }
+
+        function check_Tips(tip,data){
+            for(i=0;i<data.length;i++){
+                if(data[i]["where"] == tip){
+                    return data[i]["Tips"]
+                }
+            }
+            return null
         }
 
         function getCarddatahandle(modal, data){
