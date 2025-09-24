@@ -106,7 +106,10 @@
         {% endif %}
           <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
           <span class="subheading">{{ page.description }}</span>
+
+          {% if page.title != "404" %}
           <span class="buttonheading">假设这儿放了三个按钮</span>
+          {% endif %}
 
 
 
