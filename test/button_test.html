@@ -269,7 +269,10 @@ transform: translateY(2px);
             
     for (var i = 0; i < data.length; i++) {
         // 第一列rowspan
-        var arrLength = data[i][data_key[1]].length;
+
+        var arrLength = Array.isArray(data[i][data_key[1]]) ? data[i][data_key[1]].length : 1;
+
+
         for (var k = 0; k < arrLength; k++) {
             content += "<tr>";
             if (k === 0) {
