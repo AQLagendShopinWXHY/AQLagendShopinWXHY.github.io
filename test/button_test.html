@@ -281,6 +281,7 @@ transform: translateY(2px);
             // 其余字段同一行显示同一索引内容
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
+
                 if(part==="ingroup_URL"){
                     if(data[i][part][k] != null){
                     content += "<td style='border:1px solid #000;width:25%'>" +
@@ -295,12 +296,12 @@ transform: translateY(2px);
                                             "</td>";
                     continue;
                     }else{
-                    content += "<td style='border:1px solid #000;width:25%'><a>" +"群已满"
-                                            "</a></td>";
+                    content += "<td style='border:1px solid #000;width:25%'><a stylr='color=black'><center>" +"群已满人"
+                                            "</center></a></td>";
                     }
 
                 }
-                
+
                 if(data[i][part][k]===null || part==="button_color"){
                     continue;
                 }
