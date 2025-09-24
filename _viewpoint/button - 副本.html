@@ -1,151 +1,178 @@
-{% comment %}
-    @param {string} type - 'page' | 'post' | 'keynote'
-    @param {boolean} short
-{% endcomment %}
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:10px ;
+}
 
-{% if include.type == 'post' or include.type == 'page' %}
-<style type="text/css">
-    header.intro-header{
-        position: relative;
-        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
-        background: {{ page.header-bg-css }};
-    }
+.button_inQQgroup {
+  border: none;
+  color: white;
+  padding: 15px 45px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:10px ;
+}
 
-    {% if page.header-mask %}
-    header.intro-header .header-mask{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        background: rgba(0,0,0, {{ page.header-mask }});
-    }
-    {% endif %}
+a {
+text-decoration: none; /* 去除下划线 */
+color: white; /* 链接颜色 */
+}
+
+.button:onclick{
+ background-color: #45a049; /* 深绿色背景 */
+}
+
+
+
+button:active {
+background-color: orange;
+box-shadow: 0 3px #666;
+transform: translateY(2px);
+}
+
+.button1 {background-color: #04AA6D;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: red;} /* Blue */
+
+
+        /*模态框主体样式*/
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /*模态框公共样式*/
+        .modal-content {
+            background-color: #fefefe;
+            margin: 50px auto 0;
+            padding: 20px;
+            border: 1px solid #888;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            animation: modal-show 0.3s;
+        }
+
+        /* 正常大小 */
+        .modal-normal {
+            width: 600px;
+        }
+
+        /* 中等大小 */
+        .modal-medium {
+            width: 400px;
+        }
+
+        /* 迷你大小 */
+        .modal-mini {
+            width: 250px;
+        }
+
+        /* 隐藏 */
+        .modal-hide {
+            animation: modal-hide 0.3s;
+        }
+
+        /* 展示动画 */
+        @keyframes modal-show {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 隐藏动画 */
+        @keyframes modal-hide {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+
+        /*关闭按钮*/
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255,0,0,0);
+        }
+
+        /*关闭按钮的鼠标点击和经过样式*/
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255,0,0,0);
+        }
+
+
 </style>
-{% endif %}
+</head>
+<body>
 
-{% if include.type == 'post' %}
-{% if page.header-style == 'text' %}
-<header class="intro-header style-text" >
-{% else %}
-<header class="intro-header" >
-{% endif %}
-    <div class="header-mask"></div>
-    {% if page.header-img-credit %}
-    <div class="header-img-credit">
-        Image by <a href="//{{page.header-img-credit-href}}">{{page.header-img-credit}}</a>
-    </div>
-    {% endif %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                    <h1>{{ page.title }}</h1>
-                    {% comment %} always create a h2 for keeping the margin {% endcomment %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-{% endif %}
+<button class="button button1" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_Download">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+      </span>
+下载辅助
+</button>
 
-{% if include.type == 'keynote' %}
-<style type="text/css">
-    header.intro-header{
-        height: 500px;
-        overflow: hidden;
-    }
-    header.intro-header .container{
-        visibility: hidden;
-    }
-    header iframe{
-        width: 100%;
-        height: 100%;
-        border: 0;
-    }
-</style>
-<header class="intro-header" >
-    <iframe src="{{page.iframe}}"></iframe>
-    <!-- keep for SEO -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}
-                    </div>
-                    <h1>{{ page.title }}</h1>
-                    {% comment %} always create a h2 for keeping the margin {% endcomment %}
-                    <h2 class="subheading">{{ page.subtitle }}</h2>
-                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}
-                        on {{ page.date | date: "%B %-d, %Y" }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
-{% endif %}
+<button class="button button2" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_GetCard_Buy">
+    <span class="fa-stack fa-lg">
+    <i class="fa fa-shopping-bag fa-stack-1x fa-inverse"></i>
+    </span>
+购买卡密
+</button>
 
-{% if include.type == 'page' %}
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
-  <div class="header-mask"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        {% if include.short %}
-        <div class="site-heading" id="tag-heading">
-        {% else %}
-        <div class="site-heading">
-        {% endif %}
-          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-          <span class="subheading">{{ page.description }}</span>
+<button class="button button2" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_GetCard_Get">
+    <span class="fa-stack fa-lg">
+    <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
+    </span>
+提取卡密
+</button>
 
-          {% if page.title!=404 %}
-            <button class="button button1" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_Download">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
-                </span>
-            下载辅助
-            </button>
-
-            <button class="button button2" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_GetCard_Buy">
-                <span class="fa-stack fa-lg">
-                <i class="fa fa-shopping-bag fa-stack-1x fa-inverse"></i>
-                </span>
-            购买卡密
-            </button>
-
-            <button class="button button2" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_GetCard_Get">
-                <span class="fa-stack fa-lg">
-                <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
-                </span>
-            提取卡密
-            </button>
-
-            <button class="button button3" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_AfterCard_QQgroup">
-                <span class="fa-stack fa-lg">
-                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
-                </span>
-            加售后群
-            </button>
-          {% endif %}
+<button class="button button3" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_AfterCard_QQgroup">
+    <span class="fa-stack fa-lg">
+    <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+    </span>
+加售后群
+</button>
 
 
 
-          
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-{% endif %}
+
 
     <div id="myModal" class="modal">
         <div class="modal-content modal-normal">
@@ -158,6 +185,8 @@
     </div>
 
 
+
+</body>
 <script>
 
         // 获取触发模态框的自定义属性
@@ -414,3 +443,4 @@
             });
         };
     </script>
+</html>

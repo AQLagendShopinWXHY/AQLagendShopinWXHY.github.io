@@ -1,0 +1,18 @@
+[
+  {
+    "where": "in_GetCard_Get",
+    "time": 20250923
+  },
+  {
+    "where": "in_Download",
+    "time": 20250923
+  },
+  {
+    "where": "in_AfterCard_QQgroup",
+    "time": 20250923
+  },
+  {
+    "where": "in_GetCard_Buy",
+    "time": 20250923
+  }
+]
