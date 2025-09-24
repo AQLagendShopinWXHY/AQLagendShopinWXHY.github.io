@@ -108,7 +108,7 @@
           <span class="subheading">{{ page.description }}</span>
 
           <!-- 要改成只有首页才生效 -->
-          {% unless page.title %}
+          {% if page.title == nil or page.title == "" %}
 
             <button class="button button1" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_Download">
                 <span class="fa-stack fa-lg">
