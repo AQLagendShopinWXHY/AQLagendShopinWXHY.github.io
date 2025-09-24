@@ -262,7 +262,9 @@ transform: translateY(2px);
         }
 
         function check_Tips(tip,data){
+            console.log(tip,data)
             for(i=0;i<data.length;i++){
+                console.log(data[i])
                 if(data[i]["where"] == tip){
                     return data[i]["Tips"]
                 }
@@ -404,8 +406,6 @@ transform: translateY(2px);
             if (tipsElement) {
                 tipsElement.textContent = tips;
                 // contentElement.textContent = content;
-            }else{
-                tipsElement.textContent = "无";
             }
         }
         // 监听模态框的关闭时事件
