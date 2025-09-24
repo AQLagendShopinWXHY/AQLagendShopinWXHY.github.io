@@ -274,6 +274,7 @@ transform: translateY(2px);
         }
 
         function check_Times(timelist,data){
+            console.log(timelist,data)
             for(i=0;i<timelist.length;i++){
                 if(timelist[i]["where"] == data){
                     return timelist[i]["time"]
