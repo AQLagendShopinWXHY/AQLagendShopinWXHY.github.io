@@ -7,9 +7,9 @@
       null
     ],
     "platform": [
-      "电脑版（Windows32位）",
-      "电脑版（Windows64位）",
-      "手机版（Android）"
+      "电脑（Windows32位）",
+      "电脑（Windows64位）",
+      "手机（Android）"
     ],
     "URL": [
       "https://www.123684.com/s/Xn2Rjv-wG0F3",
@@ -25,19 +25,19 @@
   {
     "where": "迷你辅助",
     "Card_need": "进阶版功能需卡密",
-    "platform": "电脑版（Windows）",
+    "platform": "电脑（Windows）",
     "URL": "https://www.123684.com/s/Xn2Rjv-FG0F3",
     "button_color": "#28cee5"
   },
   {
     "where": "小氪奇辅助",
     "Card_need": [
-      "电脑版无需卡密、手机版需卡密",
-      null
+      "无需卡密",
+      "需卡密"
     ],
     "platform": [
-      "电脑版（Windows）",
-      "手机版（Android）"
+      "电脑（Windows）",
+      "手机（Android）"
     ],
     "URL": [
       "https://www.123684.com/s/Xn2Rjv-YG0F3",
