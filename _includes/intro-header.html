@@ -108,7 +108,7 @@
           <span class="subheading">{{ page.description }}</span>
 
           <!-- 要改成只有首页才生效 -->
-          {% if page.title!=404 %}
+          {% if page.title=="辉夜售后" %}
 
             <button class="button button1" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_Download">
                 <span class="fa-stack fa-lg">
@@ -161,7 +161,6 @@
 
 
 <script>
-        console.log({{ page.title }})
         // 获取触发模态框的自定义属性
         var modalButtons = document.querySelectorAll("[data-modal-action]");
 
