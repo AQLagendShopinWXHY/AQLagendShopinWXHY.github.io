@@ -281,6 +281,26 @@ transform: translateY(2px);
             // 其余字段同一行显示同一索引内容
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
+                if(part==="ingroup_URL"){
+                    if(data[i][part][k] != null){
+                    content += "<td style='border:1px solid #000;width:25%'>" +
+                                              "<li>"+
+                                                "<a href='" + data[i][part] + "' target='_blank'>"+
+                                                '<span class="fa-stack fa-lg">'+
+                                                    '<i class="fa fa-circle fa-stack-2x"></i>'+
+                                                    '<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>'+
+                                                "</span>"+
+                                                "</a>"+
+                                            "</li>"+
+                                            "</td>";
+                    continue;
+                    }else{
+                    content += "<td style='border:1px solid #000;width:25%'><a>" +"群已满"
+                                            "</a></td>";
+                    }
+
+                }
+                
                 if(data[i][part][k]===null || part==="button_color"){
                     continue;
                 }
@@ -299,24 +319,6 @@ transform: translateY(2px);
                     continue;
                     }
                     
-                }if(part==="ingroup_URL"){
-                    if(data[i][part][k] != null){
-                    content += "<td style='border:1px solid #000;width:25%'>" +
-                                              "<li>"+
-                                                "<a href='" + data[i][part] + "' target='_blank'>"+
-                                                '<span class="fa-stack fa-lg">'+
-                                                    '<i class="fa fa-circle fa-stack-2x"></i>'+
-                                                    '<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>'+
-                                                "</span>"+
-                                                "</a>"+
-                                            "</li>"+
-                                            "</td>";
-                    continue;
-                    }else{
-                    content += "<td style='border:1px solid #000;width:25%'><a>" +"群已满"
-                                            "</a></td>";
-                    }
-
                 }
 
                 if(arrLength != 1){
