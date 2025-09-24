@@ -230,9 +230,11 @@ transform: translateY(2px);
                 }else if(modalData==="in_AfterCard_QQgroup"){
                     const json_data = await fetchData("./json/CARD_Shouhou_AfterCard_QQGroup.json");
                     var title = "加入售后群"
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
                 }else if(modalData==="in_Download"){
                     const json_data = await fetchData("./json/CARD_Shouhou_StartDownload_URL.json");
                     var title = "辅助下载"
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data))
                                     }
             })();
         }
