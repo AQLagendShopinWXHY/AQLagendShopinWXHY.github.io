@@ -403,10 +403,12 @@ transform: translateY(2px);
                 // contentElement.textContent = content;
             }
             if (tipsElement) {
-                tipsElement.textContent = "Tips:"+tips;
-                // contentElement.textContent = content;
-            }else{
+                if(tipsElement == "null"){
                 tipsElement.textContent = "Tips:无";
+                }else{
+                tipsElement.textContent = "Tips:"+tips;
+                }
+                // contentElement.textContent = content;
             }
         }
         // 监听模态框的关闭时事件
