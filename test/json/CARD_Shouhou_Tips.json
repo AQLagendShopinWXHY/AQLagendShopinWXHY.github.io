@@ -5,14 +5,14 @@
   },
   {
     "where": "in_Download",
-    "Tips": null
+    "Tips": "无"
   },
   {
     "where": "in_AfterCard_Qqgroup",
-    "Tips": null
+    "Tips": "无"
   },
   {
     "where": "in_GetCard_Buy",
-    "Tips": null
+    "Tips": "无"
   }
 ]
