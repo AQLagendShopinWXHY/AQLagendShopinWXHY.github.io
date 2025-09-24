@@ -1,11 +1,6 @@
 [
   {
-    "where": "My",
-    "desc": [
-      "My辅助",
-      null,
-      null
-    ],
+    "where": "My辅助",
     "Card_need": [
       "需卡密",
       null,
@@ -28,19 +23,14 @@
     ]
   },
   {
-    "where": "mini",
-    "desc": "迷你辅助",
+    "where": "迷你辅助",
     "Card_need": "进阶版功能需卡密",
     "platform": "电脑版（Windows）",
     "URL": "https://www.123684.com/s/Xn2Rjv-FG0F3",
     "button_color": "#28cee5"
   },
   {
-    "where": "xiaokeqi",
-    "desc": [
-      "小氪奇辅助",
-      null
-    ],
+    "where": "小氪奇辅助",
     "Card_need": [
       "电脑版无需卡密、手机版需卡密",
       null
