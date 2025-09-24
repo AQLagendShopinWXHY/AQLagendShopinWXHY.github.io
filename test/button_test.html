@@ -263,10 +263,10 @@ transform: translateY(2px);
 
         function check_Tips(tip,data){
             console.log(tip,data)
-            for(i=0;i<data.length;i++){
-                console.log(data[i])
-                if(data[i]["where"] == tip){
-                    return data[i]["Tips"]
+            for(i=0;i<tip.length;i++){
+                console.log(tip[i])
+                if(tip[i]["where"] == data){
+                    return tip[i]["Tips"]
                 }
             }
             return null
@@ -404,7 +404,7 @@ transform: translateY(2px);
                 // contentElement.textContent = content;
             }
             if (tipsElement) {
-                tipsElement.textContent = tips;
+                tipsElement.textContent = "Tips:"+tips;
                 // contentElement.textContent = content;
             }
         }
