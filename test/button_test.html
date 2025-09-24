@@ -220,7 +220,6 @@ transform: translateY(2px);
             (async () => {
             const tip = await fetchData("./json/CARD_Shouhou_Tips.json");
             const tips = tip[modalData].Tips;
-            console.log(tips)
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
                     const json_data = await fetchData("./json/CARD_Shouhou_GETCard_BUY.json");
