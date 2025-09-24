@@ -6,11 +6,6 @@
       null,
       null
     ],
-    "use_platform": [
-      "Windows、Android",
-      null,
-      null
-    ],
     "Card_need": [
       "需卡密",
       null,
@@ -35,7 +30,6 @@
   {
     "where": "mini",
     "desc": "迷你辅助",
-    "use_platform": "Windows",
     "Card_need": "进阶版功能需卡密",
     "platform": "电脑版（Windows）",
     "URL": "https://www.123684.com/s/Xn2Rjv-FG0F3",
@@ -45,10 +39,6 @@
     "where": "xiaokeqi",
     "desc": [
       "小氪奇辅助",
-      null
-    ],
-    "use_platform": [
-      "Windows、Android",
       null
     ],
     "Card_need": [
