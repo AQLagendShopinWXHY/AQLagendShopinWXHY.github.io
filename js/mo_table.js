@@ -34,7 +34,7 @@ const base = window.location.origin;
             (async () => {
             const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
             const tips = check_Tips(tip,modalData)
-            const timelist = await fetchData("./viewpoint/json/CARD_Shouhou_Latest_time.json")
+            const timelist = await fetchData("/viewpoint/json/CARD_Shouhou_Latest_time.json")
             const updatetime = check_Times(timelist,modalData)
 
                 if(modalData==="in_GetCard_Buy"){
