@@ -14,5 +14,13 @@
   {
     "where": "in_GetCard_Buy",
     "Tips": "无"
+  },
+  {
+    "where": "in_FansClub",
+    "Tips": "无"
+  },
+  {
+    "where": "in_Wechat",
+    "Tips": "无"
   }
 ]
