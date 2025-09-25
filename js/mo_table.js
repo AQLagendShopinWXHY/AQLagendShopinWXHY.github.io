@@ -1,5 +1,5 @@
 const base = window.location.origin;
-console.log(base)
+
 
     // 获取触发模态框的自定义属性
         var modalButtons = document.querySelectorAll("[data-modal-action]");
