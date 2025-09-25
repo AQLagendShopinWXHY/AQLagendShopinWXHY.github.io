@@ -32,7 +32,7 @@ console.log(base)
             modal.querySelector(".modal-content").classList.remove("modal-hide");
 
             (async () => {
-            const tip = await fetchData("./viewpoint/json/CARD_Shouhou_Tips.json");
+            const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
             const tips = check_Tips(tip,modalData)
             const timelist = await fetchData("./viewpoint/json/CARD_Shouhou_Latest_time.json")
             const updatetime = check_Times(timelist,modalData)
@@ -55,11 +55,11 @@ console.log(base)
                     var title = "辅助下载"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_FansClub"){
-                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_FansClub.json");
+                    const json_data = await fetchData(base+"./viewpoint/json/CARD_Shouhou_FansClub.json");
                     var title = "加入辉夜粉丝群（非售后群）"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_WechatLinks"){
-                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_WechatLinks.json");
+                    const json_data = await fetchData(base+"./viewpoint/json/CARD_Shouhou_WechatLinks.json");
                     var title = "关注辉夜公众号"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }
