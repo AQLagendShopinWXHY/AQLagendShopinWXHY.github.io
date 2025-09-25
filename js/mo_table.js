@@ -51,7 +51,15 @@
                     const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_StartDownload_URL.json");
                     var title = "辅助下载"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
-                                    }
+                }else if(modalData==="in_FansClub"){
+                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_FansClub.json");
+                    var title = "加入辉夜粉丝群（非售后群）"
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
+                }else if(modalData==="in_WechatLinks"){
+                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_WechatLinks.json");
+                    var title = "关注辉夜公众号"
+                    updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
+                }
             })();
         }
 
@@ -131,6 +139,8 @@
                                             "</center></a></td>";
                     }
 
+                }else if(part == "ImgLinks"){
+                    console.log("part",part)
                 }
 
             
