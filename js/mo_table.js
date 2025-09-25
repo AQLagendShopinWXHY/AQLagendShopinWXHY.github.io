@@ -140,7 +140,10 @@
                     }
 
                 }else if(part == "ImgLinks"){
-                    console.log("part",part)
+                    content += "<td style='border:1px solid #000;width:30%'>" +
+                                            "<img src='" + data[i][part] + "'>" +
+                                            "</img></td>";
+                    continue
                 }
 
             
