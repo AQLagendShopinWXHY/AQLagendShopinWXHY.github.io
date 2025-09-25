@@ -14,5 +14,13 @@
   {
     "where": "in_GetCard_Buy",
     "time": 20250923
+  },
+  {
+    "where": "in_FansClub",
+    "time": 20250923
+  },
+  {
+    "where": "in_Wechat",
+    "time": 20250923
   }
 ]
