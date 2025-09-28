@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "首次购买，如何安装My（电脑版/手机版）"
+title:        "首次购买，如何安装My"
 author:       "万象辉夜"
 header-style: text
 catalog:      true
@@ -80,3 +80,6 @@ tags:
 ![](/img/My_img/1/1_14.png)
 如果您需要在桌面也能直接使用，直接右键此exe，找到“创建快捷方式”，点一下
 会看到多出来一个My的写着快捷方式的图标，将其拖到电脑桌面即可！
+
+手机版·第一步，下载
+------
