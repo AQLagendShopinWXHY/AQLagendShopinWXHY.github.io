@@ -18,16 +18,16 @@ tags:
 
 
 首先打开辉夜售后的官网，点击“下载辅助”
-![](img/My_img/1/1_23.png)
+![](/img/My_img/1/1_23.png)
 
 随后在打开的页面中，选择My32位/64位(18年以后的电脑建议优先下载64位)
-![](img/My_img/1/1_25.png)
+![](/img/My_img/1/1_25.png)
 
 在接下来的界面中，按照图片所示的做法来逐步完成下载
-![](img/My_img/1/1_27.png)
-![](img/My_img/1/1_7.png)
-![](img/My_img/1/1_5.png)
-![](img/My_img/1/1_12.png)
+![](/img/My_img/1/1_27.png)
+![](/img/My_img/1/1_7.png)
+![](/img/My_img/1/1_5.png)
+![](/img/My_img/1/1_12.png)
 
 随后，点击“在文件夹中显示”
-![](img/My_img/1/1_10.png)
+![](/img/My_img/1/1_10.png)
