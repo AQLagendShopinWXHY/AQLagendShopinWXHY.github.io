@@ -1,12 +1,12 @@
 .button {
   border: none;
   color: white;
-  padding: 35px 32px;
+  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 14px 2px;
   cursor: pointer;
   border-radius:10px ;
 }
@@ -19,7 +19,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 14px 2px;
   cursor: pointer;
   border-radius:10px ;
 }
@@ -31,7 +31,6 @@ color: white; /* 链接颜色 */
 
 .button:onclick{
  background-color: #45a049; /* 深绿色背景 */
- padding-top: 2cm;
 }
 
 
