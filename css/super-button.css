@@ -2,8 +2,9 @@
   color: #FFA500; /* 深色底 */
 }
 
-.footer-color .fa-circle::before {
-  color: #0085A1; /* 浅色图标 */
+/* 鼠标悬停在按钮上时变色 */
+.footer-color a:hover .fa-circle {
+  color: #0085A1;
 }
 /* 临时修复，后续整理 */
 .button {
