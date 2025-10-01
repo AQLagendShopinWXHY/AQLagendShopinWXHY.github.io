@@ -147,10 +147,10 @@ transform: translateY(2px);
                 margin: 20% auto;
             }
             .modal-content h3 {
-                font-size: 13px;
+                font-size: 10px;
             }
             .modal-content p {
-                font-size: 8px;
+                font-size: 5px;
             }
             .modal-content table {
             max-width: 676px;
@@ -158,4 +158,5 @@ transform: translateY(2px);
             transform-origin: top left;
             margin-bottom: -10%;
             }
+            /* 后续优化 */
         }
