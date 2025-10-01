@@ -144,7 +144,7 @@ transform: translateY(2px);
         @media screen and(max-width: 752px) {
             /* 是if语句 */
             .modal-content {
-                width: 752px;
+                width: 100%;
                 margin: 20% auto;
             }
             .modal-content h3 {
@@ -154,7 +154,7 @@ transform: translateY(2px);
                 font-size: 14px;
             }
             .tablemtk-use {
-            width: 752px;
+            width: 95%;
             margin: 5% auto;
             }
         }
