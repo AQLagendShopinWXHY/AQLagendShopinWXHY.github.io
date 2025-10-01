@@ -23,7 +23,7 @@ function handleRegistration(registration){
       } else {
         console.log('A Visit without previous SW');
         createSnackbar({
-          message: 'App ready for offline use.',
+          message: '本界面已开启离线访问功能，没网络也不担心啦~',
           duration: 3000
         })
       }
@@ -48,8 +48,8 @@ if(navigator.serviceWorker){
     if(data.command == "UPDATE_FOUND"){
       console.log("UPDATE_FOUND_BY_SW", data);
       createSnackbar({
-        message: "Content updated.",
-        actionText:"refresh",
+        message: "发现新版本，点击刷新页面更新",
+        actionText:"刷新",
         action: function(e){location.reload()}
       })
     }
