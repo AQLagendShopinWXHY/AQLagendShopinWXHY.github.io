@@ -7,6 +7,7 @@ description: "不清楚这个地方作用在哪儿 | 每日摸鱼好助手"
 keyword: "My, 迷你, 小氪奇, 安装, 找回，白屏，功能"
 url: "https://aqlagendshopinwxhy.github.io/shop.github.io" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
+icpdata: "沪ICP备2022035730号-1" # your ICP data, if you have one
 
 # Publish posts or collection documents with a future date.
 future: true
@@ -79,7 +80,7 @@ ga_domain: huangxuan.me
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
 sidebar-about-description: "你的每日摸鱼好助手 <br> 疯狂星期四主持人<br>店铺唯一的客服喵~"
-sidebar-avatar: https://github.com/AQLagendShopinWXHY.png # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/icon_wechat.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
