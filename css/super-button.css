@@ -2,6 +2,10 @@
   color: #FFA500; /* 深色底 */
 }
 
+.footer-color .fa-circle::hover {
+  color: #0085A1; /* 浅色图标 */
+}
+/* 临时修复，后续整理 */
 .button {
   border: none;
   color: white;
