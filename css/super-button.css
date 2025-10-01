@@ -147,13 +147,12 @@ transform: translateY(2px);
                 margin: 20% auto;
             }
             .modal-content h3 {
-                font-size: 18px;
+                font-size: 13px;
             }
             .modal-content p {
-                font-size: 14px;
+                font-size: 8px;
             }
-            .tablemtk-use {
+            ..modal-content table {
             max-width: 676px;
-            margin: 5%;
             }
         }
