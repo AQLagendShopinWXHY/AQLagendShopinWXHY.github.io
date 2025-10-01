@@ -143,7 +143,7 @@ transform: translateY(2px);
 
         @media (max-width: 752px) {
             .modal-content {
-                width: 90%;
+                width: 95%;
                 margin: 20% auto;
             }
             .modal-content h3 {
@@ -153,10 +153,10 @@ transform: translateY(2px);
                 font-size: 5px;
             }
             .modal-content table {
-            max-width: 676px;
+            max-width: 710px;
             transform: scale(0.5); 
             transform-origin: top left;
-            margin-bottom: -10%;
+            word-break: break-word;
             }
             /* 后续优化 */
         }
