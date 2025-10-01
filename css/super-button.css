@@ -165,7 +165,7 @@ transform: translateY(2px);
             margin: 20% auto;
             padding-bottom: 0;
             overflow: hidden; /* 防止缩放后内容溢出 */
-            aspect-ratio: 710/426; /* 替换为你的表格原始宽高比 */
+            aspect-ratio: auto /* 替换为你的表格原始宽高比 */
         }
         .modal-content h3 {
             font-size: calc(16px * 0.6); /* 基础字号 * 缩放比例 */
