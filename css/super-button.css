@@ -141,7 +141,7 @@ transform: translateY(2px);
             -webkit-tap-highlight-color: rgba(255,0,0,0);
         }
 
-        @media screen and(max-width: 752px) {
+        @media screen and (max-width: 752px) {
             /* 是if语句 */
             .modal-content {
                 width: 100%;
