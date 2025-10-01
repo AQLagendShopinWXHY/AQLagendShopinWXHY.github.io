@@ -159,24 +159,17 @@ transform: translateY(2px);
             }
         } */
 
-        @media (max-width: 100%) {
-        .modal-content {
-            width: 95%;
-            margin: 20% auto;
-            padding-bottom: 0;
-            overflow: hidden; /* 防止缩放后内容溢出 */
-            aspect-ratio: 710/426; /* 替换为你的表格原始宽高比 */
-        }
-        .modal-content h3 {
-            font-size: calc(16px * 0.6); /* 基础字号 * 缩放比例 */
-        }
-        .modal-content p {
-            font-size: calc(12px * 0.6); /* 基础字号 * 缩放比例 */
-        }
-        .modal-content table {
-            width: 100%; /* 表格宽度填满容器 */
-            max-width: 100%; /* 覆盖原始 max-width */
-            transform: scale(0.6); /* 仅缩放表格 */
-            transform-origin: top left;
-        }
+@media (max-width: 752px) {
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+        aspect-ratio: 742/1024; /* 替换为你的表格原始宽高比 */
+        overflow: hidden;
+    }
+    .modal-content table {
+        width: 100%;
+        height: 100%;
+        transform: scale(0.6);
+        transform-origin: top left;
+    }
 }
