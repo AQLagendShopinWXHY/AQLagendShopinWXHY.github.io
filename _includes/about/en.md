@@ -9,7 +9,7 @@ The main functions of the website, as initially stated, believe that Huiye can p
 ##### Website maintenance
 Website don't have solvtion about all the assist-artist,that's more recommend players focus assist-artist Bilibili to get latest news.
 
-##### Focus WanxiangHuiye
+##### Follow WanxiangHuiye
 [Bilibili][1]<br>
 [Taobao][2]<br>
 [WechatShop][3]<br>
