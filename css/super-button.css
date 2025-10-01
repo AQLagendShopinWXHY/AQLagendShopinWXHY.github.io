@@ -84,22 +84,22 @@ transform: translateY(2px);
             width: 600px;
         }
 
-        /* 中等大小 */
+
         .modal-medium {
             width: 400px;
         }
 
-        /* 迷你大小 */
+
         .modal-mini {
             width: 250px;
         }
 
-        /* 隐藏 */
+
         .modal-hide {
             animation: modal-hide 0.3s;
         }
 
-        /* 展示动画 */
+
         @keyframes modal-show {
             from {
                 opacity: 0;
@@ -111,7 +111,7 @@ transform: translateY(2px);
             }
         }
 
-        /* 隐藏动画 */
+
         @keyframes modal-hide {
             from {
                 opacity: 1;
@@ -123,7 +123,6 @@ transform: translateY(2px);
             }
         }
 
-        /*关闭按钮*/
         .close {
             color: #aaa;
             float: right;
@@ -133,7 +132,7 @@ transform: translateY(2px);
             -webkit-tap-highlight-color: rgba(255,0,0,0);
         }
 
-        /*关闭按钮的鼠标点击和经过样式*/
+
         .close:hover,
         .close:focus {
             color: black;
@@ -144,13 +143,17 @@ transform: translateY(2px);
 
         @media (max-width: 100%) {
             .modal-content {
-                width: 90%; /* 更宽的占用 */
-                margin: 20% auto; /* 调整垂直位置 */
+                width: 90%;
+                margin: 20% auto;
             }
             .modal-content h3 {
                 font-size: 18px;
             }
             .modal-content p {
                 font-size: 14px;
+            }
+            .tablemtk-use {
+                max-width: 100%;
+                font-size: 12px;
             }
         }
