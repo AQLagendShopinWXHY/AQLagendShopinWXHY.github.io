@@ -81,7 +81,8 @@ transform: translateY(2px);
 
         /* 正常大小 */
         .modal-normal {
-            width: 600px;
+            position: relative;
+            max-width: 600px;
         }
 
         /* 中等大小 */
