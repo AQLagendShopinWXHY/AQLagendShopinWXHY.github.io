@@ -152,7 +152,10 @@ transform: translateY(2px);
             .modal-content p {
                 font-size: 8px;
             }
-            ..modal-content table {
+            .modal-content table {
             max-width: 676px;
+            transform: scale(0.8); 
+            transform-origin: top left;
+            margin-bottom: -10%;
             }
         }
