@@ -1126,11 +1126,6 @@ samp {
 .intro-header.style-text .page-heading .subheading {
   margin-bottom: 15px;
 }
-.intro-header.style-text .site-heading .buttonheading,
-.intro-header.style-text .post-heading .buttonheading,
-.intro-header.style-text .page-heading .buttonheading {
-  margin-bottom: 15px;
-}
 .intro-header.style-text .tags a,
 .intro-header.style-text .tags .tag {
   border-color: #404040;
@@ -1192,20 +1187,6 @@ samp {
   font-weight: 300;
   margin: 10px 0 0;
 }
-.intro-header .site-heading .buttonheading,
-.intro-header .page-heading .buttonheading {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  line-height: 1.7;
-  font-size: 18px;
-  line-height: 1.1;
-  display: block;
-  font-weight: 300;
-  margin: 10px 0 0;
-}
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading h1,
   .intro-header .page-heading h1 {
@@ -1217,25 +1198,11 @@ samp {
   margin-bottom: 24px;
 }
 .intro-header .post-heading .subheading,
-.intro-header .post-heading .buttonheading,
 .intro-header .post-heading .meta {
   line-height: 1.1;
   display: block;
 }
 .intro-header .post-heading .subheading {
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
-  line-height: 1.7;
-  font-size: 17px;
-  line-height: 1.4;
-  font-weight: normal;
-  margin: 10px 0 30px;
-  margin-top: -5px;
-}
-.intro-header .post-heading .buttonheading {
   /* Hux learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
@@ -1262,9 +1229,6 @@ samp {
     font-size: 55px;
   }
   .intro-header .post-heading .subheading {
-    font-size: 30px;
-  }
-  .intro-header .post-heading .buttonheading {
     font-size: 30px;
   }
   .intro-header .post-heading .meta {
