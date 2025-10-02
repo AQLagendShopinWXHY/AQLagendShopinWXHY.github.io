@@ -173,7 +173,4 @@ transform: translateY(2px);
     .modal-content table {
         width: calc(95% * 0.4); 
     }
-    .button {
-        width: calc(95% * 0.4); 
-    }
 }
