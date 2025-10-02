@@ -79,11 +79,6 @@ transform: translateY(2px);
             animation: modal-show 0.3s;
         }
 
-        .modal-content td {
-        border:1px solid #000;
-        width:20%;
-        }
-
         /* 正常大小 */
         .modal-normal {
             width: 600px;
