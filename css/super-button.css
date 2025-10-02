@@ -173,7 +173,7 @@ transform: translateY(2px);
     .modal-content table {
         width: calc(95% * 0.4); /* 宽度也按比例缩小 */
     }
-    .modal-content td {
-        width:752px * 0.25;
+    .button {
+        width: calc(95% * 0.4); /* 宽度也按比例缩小 */;
     }
 }
