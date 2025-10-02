@@ -128,7 +128,7 @@ const base = window.location.origin;
 
                 if(part==="ingroup_URL"){
                     if(data[i][part][k] != null){
-                    content += "<td style='border:1px solid #000;width:30%'><center>" +
+                    content += "<td><center>" +
                                                 "<a href='" + data[i][part] + "' target='_blank'>"+
                                                 '<span class="fa-stack fa-lg">'+
                                                     '<i class="fa fa-circle fa-stack-2x" style="color:#008CBA"></i>'+
@@ -138,12 +138,12 @@ const base = window.location.origin;
                                             "</center></td>";
                     continue;
                     }else{
-                    content += "<td style='border:1px solid #000;width:30%'><a style='color:black'><center>" +"群已满人"
+                    content += "<td><a style='color:black'><center>" +"群已满人"
                                             "</center></a></td>";
                     }
 
                 }else if(part == "ImgLinks"){
-                    content += "<td style='border:1px solid #000;width:30%'>" +
+                    content += "<td>" +
                                             "<img src='" + data[i][part] + "'>" +
                                             "</img></td>";
                     continue
@@ -155,13 +155,13 @@ const base = window.location.origin;
                 }
                 if(part==="URL"){
                     if(arrLength != 1){
-                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%'>" +
+                    content += "<td rowspan='" + pd_null(data[i][part],k) + "'>" +
                                             "<a href='" + data[i][part][k] + "' target='_blank'>" +
                                             "<button class='button' style='background-color:" + data[i][data_key[j+1]][k] + ";'>点击跳转</button>" +
                                             "</a></td>";
                     continue;
                     }else{
-                    content += "<td style='border:1px solid #000;width:30%'>" +
+                    content += "<td>" +
                                             "<a href='" + data[i][part] + "' target='_blank'>" +
                                             "<button class='button' style='background-color:" + data[i][data_key[j+1]] + ";'>点击跳转</button>" +
                                             "</a></td>";
