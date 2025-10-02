@@ -173,4 +173,8 @@ transform: translateY(2px);
     .modal-content table {
         width: calc(95% * 0.4); /* 宽度也按比例缩小 */
     }
+    .modal-content td {
+    border:1px solid #000;
+        width:calc(30% * 0.4)
+    }
 }
