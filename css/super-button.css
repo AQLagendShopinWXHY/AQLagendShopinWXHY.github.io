@@ -161,7 +161,7 @@ transform: translateY(2px);
 
 @media (max-width: 752px) {
     .modal-content {
-        width: calc(95%); /* 宽度也按比例缩小 */
+        width: 95%; /* 宽度也按比例缩小 */
         margin: calc(20% * 0.6) auto;
         font-size: calc(16px * 0.6); /* 文字大小也缩放 */
     }
