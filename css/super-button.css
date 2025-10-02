@@ -164,7 +164,7 @@ transform: translateY(2px);
             }
         } */
 
-/* @media (max-width: 752px) {
+@media (max-width: 752px) {
     .modal-content {
         width: calc(95%); 
         margin: calc(5% * 0.6);
@@ -176,4 +176,4 @@ transform: translateY(2px);
     .button {
         width: calc(95% * 0.4); 
     }
-} */
+}
