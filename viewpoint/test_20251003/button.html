@@ -207,7 +207,9 @@ transform: translateY(2px);
     </div>
 
     <div id="myModal_checkfalse" class="modal">
-    <h3>请先勾选确认下载目标无误后再继续！</h3>
+        <div class="modal-content modal-normal">
+            <center><h3>请先勾选确认下载目标无误后再继续！</h3></center>
+        </div>
     </div>
 
 </body>
@@ -216,6 +218,7 @@ const base = window.location.origin;
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
+
         const downloadButton = document.getElementById("dowload_check");
         if (checkbox.checked) {
             downloadButton.disabled = false;
