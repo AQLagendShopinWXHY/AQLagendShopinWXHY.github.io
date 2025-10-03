@@ -215,6 +215,7 @@ transform: translateY(2px);
 </body>
 <script>
 const base = window.location.origin;
+let test_tanchukuang = false;
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
@@ -238,16 +239,18 @@ const base = window.location.origin;
             var checkfalseModal = document.getElementById("myModal_checkfalse");
             checkfalseModal.style.display = "block";
             checkfalseModal.querySelector(".modal-content").classList.remove("modal-hide");
-
+            // 移除之前的事件监听器，防止重复添加
+            checkfalseModal.querySelector(".modal-content").removeEventListener("animationend");
             // 3秒后自动关闭提示模态框
             setTimeout(function() {
                 checkfalseModal.querySelector(".modal-content").classList.add("modal-hide");
                 checkfalseModal.querySelector(".modal-content").addEventListener("animationend", function () {
+                    test_tanchukuang = true;
                     checkfalseModal.style.display = "none";
                 }, { once: true });
 
+
             }, 3000); // 3000毫秒后关闭
-                checkfalseModal.querySelector(".modal-content").removeEventListener("animationend")
 
         }
     });
