@@ -239,21 +239,22 @@ let checkfalse_return = false;
         if (checkbox.checked) {
             window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
         } else {
+            // 移除之前的事件监听器，防止重复添加
+            if (checkfalse_return){
+            checkfalseModal.querySelector(".modal-content").removeEventListener("animationend",remove_modals_in_text);
+            checkfalse_return = false;
+            console.log("if已移除："+checkfalse_return);
+            }
+
             // 打开提示模态框
             var checkfalseModal = document.getElementById("myModal_checkfalse");
             checkfalseModal.style.display = "block";
             checkfalseModal.querySelector(".modal-content").classList.remove("modal-hide");
 
-            // 移除之前的事件监听器，防止重复添加
-            if (checkfalse_return){
-            checkfalseModal.querySelector(".modal-content").removeEventListener("animationend",remove_modals_in_text);
-            checkfalse_return = false;
-            }
-
             // 3秒后自动关闭提示模态框
             setTimeout(function() {
                 console.log(checkfalse_return);
-                checkfalse_return = true;
+                checkfalse_return = false;
                 checkfalseModal.querySelector(".modal-content").classList.add("modal-hide");
                 checkfalseModal.querySelector(".modal-content").addEventListener("animationend",remove_modals_in_text, { once: true });
             }, 3000); // 3000毫秒后关闭
