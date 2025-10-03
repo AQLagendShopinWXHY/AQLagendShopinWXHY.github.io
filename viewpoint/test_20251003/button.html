@@ -245,7 +245,10 @@ const base = window.location.origin;
                 checkfalseModal.querySelector(".modal-content").addEventListener("animationend", function () {
                     checkfalseModal.style.display = "none";
                 }, { once: true });
+
             }, 3000); // 3000毫秒后关闭
+                checkfalseModal.querySelector(".modal-content").removeEventListener("animationend")
+
         }
     });
 
