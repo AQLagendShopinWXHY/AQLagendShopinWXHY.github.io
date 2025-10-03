@@ -198,7 +198,7 @@ transform: translateY(2px);
             <p><a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank"><img src="mini_card.png" style="width: 300px;"/></a></p>
             <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
             <span>
-            <button class="button button3 close" style="margin:0 10px 0 10px;font-size: 16px;float:none">&times;取消</button>
+            <button class="button button3 close" style="margin:0 10px 0 10px;font-size: 16px;float:none" onfocus="this.style.color='#FFFFFF'">&times;取消</button>
             <button class="button" style="margin:0 10px 0 10px;" id="dowload_check">&check;确认</button>
             </span>
             </center>
@@ -223,7 +223,7 @@ const base = window.location.origin;
         if (checkbox.checked) {
             downloadButton.disabled = false;
             downloadButton.style.backgroundColor = "#04AA6D"; // 绿色
-            downloadButton.textContent = "&times;确认"
+            downloadButton.textContent = "✓确认"
         } else {
             downloadButton.disabled = true;
             downloadButton.style.backgroundColor = "rgba(136, 136, 136, 0.2)"; // 灰色
