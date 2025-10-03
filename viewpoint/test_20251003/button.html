@@ -49,7 +49,7 @@ transform: translateY(2px);
 .button1 {background-color: #04AA6D;} /* Green */
 .button2 {background-color: #008CBA;} /* Blue */
 .button3 {background-color: red;} /* Blue */
-
+.button4 {background-color: grey;} /* Blue */
 
         /*模态框主体样式*/
         .modal {
@@ -200,10 +200,14 @@ transform: translateY(2px);
             <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
             <span>
             <button class="button button3" style="margin:0 10px 0 10px;">取消</button>
-            <button class="button button1" style="margin:0 10px 0 10px;" id="dowload_check">确认</button>
+            <button class="button button_false" style="margin:0 10px 0 10px;" id="dowload_check">确认</button>
             </span>
             </center>
         </div>
+    </div>
+
+    <div id="myModal_checkfalse" class="modal">
+    <h3>请先勾选确认下载目标无误后再继续！</h3>
     </div>
 
 </body>
@@ -227,7 +231,18 @@ const base = window.location.origin;
         if (checkbox.checked) {
             window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
         } else {
-            alert("请先确认您要下载的内容与您购买的卡密一致！");
+            // 打开提示模态框
+            var checkfalseModal = document.getElementById("myModal_checkfalse");
+            checkfalseModal.style.display = "block";
+            checkfalseModal.querySelector(".modal-content").classList.remove("modal-hide");
+
+            // 3秒后自动关闭提示模态框
+            setTimeout(function() {
+                checkfalseModal.querySelector(".modal-content").classList.add("modal-hide");
+                checkfalseModal.querySelector(".modal-content").addEventListener("animationend", function () {
+                    checkfalseModal.style.display = "none";
+                }, { once: true });
+            }, 3000); // 3000毫秒后关闭
         }
     });
 
