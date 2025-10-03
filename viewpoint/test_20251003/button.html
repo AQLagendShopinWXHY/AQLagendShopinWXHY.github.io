@@ -250,12 +250,13 @@ const base = window.location.origin;
             // 3秒后自动关闭提示模态框
             timeout_tips = setTimeout(function() {
                 close_function()
-            }, 3000); // 3000毫秒后关闭
+            }, 3000),{ once: true }; // 3000毫秒后关闭
 
             function remove_setTimeOut(e){
                 if(e.target === checkfalseModal){
                     clearTimeout(timeout_tips);
                     close_function();
+                    checkfalseModal.removeEventListener("click",remove_setTimeOut);
                 }
             }
 
