@@ -224,9 +224,11 @@ const base = window.location.origin;
         if (checkbox.checked) {
             downloadButton.disabled = false;
             downloadButton.style.backgroundColor = "#04AA6D"; // 绿色
+            downloadButton.textContent = "确认"
         } else {
             downloadButton.disabled = true;
-            downloadButton.style.backgroundColor = "grey"; // 灰色
+            downloadButton.style.backgroundColor = "#aaa"; // 灰色
+            downloadButton.textContent = "不给你点！"
         }
     });
 
