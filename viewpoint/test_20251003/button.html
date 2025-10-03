@@ -197,7 +197,7 @@ transform: translateY(2px);
             <span class="close">&times;</span>
             <h3>请确认：您即将跳转下载的辅助需要使用该款卡密</h3>
             <p><a href="https://www.123684.com/s/Xn2Rjv-FG0F3" target="_blank"><img src="mini_card.png" style="width: 300px;"/></a></p>
-            <p><input type="checkbox">我已确认我要下载的内容与我购买的卡密一致</input></p>
+            <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
             <span>
             <button class="button button3" style="margin:0 10px 0 10px;">取消</button>
             <button class="button button1" style="margin:0 10px 0 10px;" id="dowload_check">确认</button>
@@ -210,10 +210,22 @@ transform: translateY(2px);
 <script>
 const base = window.location.origin;
     //单独的确认勾选才可以点button事件
+    document.getElementById("checkbox_pd").addEventListener("change", function() {
+        const checkbox = document.querySelector("input[type='checkbox']");
+        const downloadButton = document.getElementById("dowload_check");
+        if (checkbox.checked) {
+            downloadButton.disabled = false;
+            downloadButton.style.backgroundColor = "#04AA6D"; // 绿色
+        } else {
+            downloadButton.disabled = true;
+            downloadButton.style.backgroundColor = "grey"; // 灰色
+        }
+    });
+
     document.getElementById("dowload_check").addEventListener("click", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
-            document.getElementById("dowload_check").style.disabled = !this.checked;
+            window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
         } else {
             alert("请先确认您要下载的内容与您购买的卡密一致！");
         }
