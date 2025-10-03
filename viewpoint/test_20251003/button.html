@@ -200,7 +200,7 @@ transform: translateY(2px);
             <p><input type="checkbox">我已确认我要下载的内容与我购买的卡密一致</input></p>
             <span>
             <button class="button button3" style="margin:0 10px 0 10px;">取消</button>
-            <button class="button button1" style="margin:0 10px 0 10px;">确认</button>
+            <button class="button button1" style="margin:0 10px 0 10px;" id="dowload_check">确认</button>
             </span>
             </center>
         </div>
@@ -209,7 +209,15 @@ transform: translateY(2px);
 </body>
 <script>
 const base = window.location.origin;
-
+    //单独的确认勾选才可以点button事件
+    document.getElementById("dowload_check").addEventListener("click", function() {
+        const checkbox = document.querySelector("input[type='checkbox']");
+        if (checkbox.checked) {
+            window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
+        } else {
+            alert("请先确认您要下载的内容与您购买的卡密一致！");
+        }
+    });
 
     // 获取触发模态框的自定义属性
         var modalButtons = document.querySelectorAll("[data-modal-action]");
