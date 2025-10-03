@@ -199,7 +199,7 @@ transform: translateY(2px);
             <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
             <span>
             <button class="button button3 " style="margin:0 10px 0 10px;"><span class="close" style="font-size: 16px;color: FFFFFF;">&times;取消</span></button>
-            <button class="button" style="margin:0 10px 0 10px;" id="dowload_check">&check;确认</button>
+            <button class="button" style="margin:0 10px 0 10px;" id="dowload_check"><span>&check;确认</span></button>
             </span>
             </center>
         </div>
@@ -223,12 +223,12 @@ const base = window.location.origin;
         if (checkbox.checked) {
             downloadButton.disabled = false;
             downloadButton.style.backgroundColor = "#04AA6D"; // 绿色
-            downloadButton.textContent = "确认"
+            downloadButton.textContent = "<span>&check;确认</span>"
         } else {
             downloadButton.disabled = true;
             downloadButton.style.backgroundColor = "rgba(136, 136, 136, 0.2)"; // 灰色
 
-            downloadButton.textContent = "不给你点！"
+            downloadButton.textContent = "<span>&times;不给你点！</span>"
         }
     });
 
