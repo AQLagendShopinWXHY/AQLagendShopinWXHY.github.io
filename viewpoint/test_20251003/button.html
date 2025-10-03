@@ -255,12 +255,14 @@ let timeout_tips;
             timeout_tips = setTimeout(function() {
                 close_function()
                 checkfalseModal.removeEventListener("click",remove_setTimeOut);
+                console.log("时间到了")
             }, 3000); // 3000毫秒后关闭
 
             function remove_setTimeOut(e){
-                if(e.target === checkfalseModal){
+                if(e.target === checkfalseModal || e.target.closest("#myModal_checkfalse")){
                     clearTimeout(timeout_tips);
                     //还是确保一下吧
+                    console.log("点击了")
                     close_function();
                     checkfalseModal.removeEventListener("click",remove_setTimeOut);
                 }
