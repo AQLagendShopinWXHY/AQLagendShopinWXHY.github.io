@@ -215,7 +215,6 @@ transform: translateY(2px);
 </body>
 <script>
 const base = window.location.origin;
-let test_tanchukuang = false;
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
@@ -230,6 +229,10 @@ let test_tanchukuang = false;
         }
     });
 
+    function remove_modals_in_text() {
+        checkfalseModal.style.display = "none";
+        };
+
     document.getElementById("dowload_check").addEventListener("click", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
@@ -240,16 +243,11 @@ let test_tanchukuang = false;
             checkfalseModal.style.display = "block";
             checkfalseModal.querySelector(".modal-content").classList.remove("modal-hide");
             // 移除之前的事件监听器，防止重复添加
-            checkfalseModal.querySelector(".modal-content").removeEventListener("animationend");
+            checkfalseModal.querySelector(".modal-content").removeEventListener("animationend",remove_modals_in_text);
             // 3秒后自动关闭提示模态框
             setTimeout(function() {
                 checkfalseModal.querySelector(".modal-content").classList.add("modal-hide");
-                checkfalseModal.querySelector(".modal-content").addEventListener("animationend", function () {
-                    test_tanchukuang = true;
-                    checkfalseModal.style.display = "none";
-                }, { once: true });
-
-
+                checkfalseModal.querySelector(".modal-content").addEventListener("animationend",remove_modals_in_text, { once: true });
             }, 3000); // 3000毫秒后关闭
 
         }
