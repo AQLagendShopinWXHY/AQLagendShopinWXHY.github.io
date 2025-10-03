@@ -207,7 +207,7 @@ transform: translateY(2px);
     </div>
 
     <div id="myModal_checkfalse" class="modal">
-        <div class="modal-content modal-normal">
+        <div class="modal-content modal-normal" style="margin-top: 80px;">
             <center><h3>请先勾选确认下载目标无误后再继续！</h3></center>
         </div>
     </div>
@@ -237,7 +237,6 @@ let timeout_tips;
             window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
         } else {
             clearTimeout(timeout_tips);
-
             // 打开提示模态框
             var checkfalseModal = document.getElementById("myModal_checkfalse");
             checkfalseModal.style.display = "block";
@@ -254,14 +253,12 @@ let timeout_tips;
             timeout_tips = setTimeout(function() {
                 close_function()
                 checkfalseModal.removeEventListener("click",remove_setTimeOut);
-                console.log("时间到了")
             }, 3000); // 3000毫秒后关闭
 
             function remove_setTimeOut(e){
                 if(e.target === checkfalseModal || e.target.closest("#myModal_checkfalse")){
                     clearTimeout(timeout_tips);
                     //还是确保一下吧
-                    console.log("点击了")
                     close_function();
                     checkfalseModal.removeEventListener("click",remove_setTimeOut);
                 }
