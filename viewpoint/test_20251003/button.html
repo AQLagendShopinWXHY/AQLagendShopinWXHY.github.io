@@ -213,7 +213,7 @@ const base = window.location.origin;
     document.getElementById("dowload_check").addEventListener("click", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
-            window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
+            document.getElementById("dowload_check").style.disabled = !this.checked;
         } else {
             alert("请先确认您要下载的内容与您购买的卡密一致！");
         }
