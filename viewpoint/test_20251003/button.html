@@ -215,6 +215,7 @@ transform: translateY(2px);
 </body>
 <script>
 const base = window.location.origin;
+
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
@@ -229,16 +230,19 @@ const base = window.location.origin;
         }
     });
 
+let timeout_tips;
     document.getElementById("dowload_check").addEventListener("click", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
             window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
         } else {
+            clearTimeout(timeout_tips);
+            checkfalseModal.removeEventListener("click", remove_setTimeOut);
+
             // 打开提示模态框
             var checkfalseModal = document.getElementById("myModal_checkfalse");
             checkfalseModal.style.display = "block";
             checkfalseModal.querySelector(".modal-content").classList.remove("modal-hide");
-            let timeout_tips;
 
             function close_function(){
                 checkfalseModal.querySelector(".modal-content").classList.add("modal-hide");
@@ -250,11 +254,13 @@ const base = window.location.origin;
             // 3秒后自动关闭提示模态框
             timeout_tips = setTimeout(function() {
                 close_function()
-            }, 3000),{ once: true }; // 3000毫秒后关闭
+                checkfalseModal.removeEventListener("click",remove_setTimeOut);
+            }, 3000); // 3000毫秒后关闭
 
             function remove_setTimeOut(e){
                 if(e.target === checkfalseModal){
                     clearTimeout(timeout_tips);
+                    //还是确保一下吧
                     close_function();
                     checkfalseModal.removeEventListener("click",remove_setTimeOut);
                 }
