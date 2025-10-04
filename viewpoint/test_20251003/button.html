@@ -397,6 +397,19 @@ let timeout_tips;
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
             (async () => {
+
+
+                if (typeof modalData === "string") {
+                    try {
+                        modalData = JSON.parse(modalData);
+                    } catch (e) {
+                        // 如果不是 JSON，保持原样（可能是 "in_GetCard_Buy"）
+                        modalData = modalData;
+                    }
+                } else {
+                    // 如果不是字符串，直接使用
+                    modalData = modalData;
+                }
                 console.log(modalData,typeof modalData,Array.isArray(modalData))
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
