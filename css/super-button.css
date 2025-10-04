@@ -176,6 +176,7 @@ transform: translateY(2px);
         
 @media (max-width: 752px) {
     .modal-content {
+        margin-top: 15%;
         width: calc(95%); 
         margin: calc(5% * 0.6);
         font-size: calc(16px * 0.6); 
