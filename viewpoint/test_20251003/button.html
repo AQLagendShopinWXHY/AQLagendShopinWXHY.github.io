@@ -673,9 +673,6 @@ let timeout_tips;
             // 其余字段同一行显示同一索引内容
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
-                if(data[i][part][k]===null || part==="button_color"){
-                    continue;
-                }
 
                 if(arrLength != 1){
                 // content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
