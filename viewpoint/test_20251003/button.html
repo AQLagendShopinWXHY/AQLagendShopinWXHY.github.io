@@ -678,14 +678,14 @@ function getCarddatahandle_download(modal, data) {
                 
                 // 如果是按钮字段，插入按钮；否则显示数据
                 if (arrLength > 1 && part === "button_field") { // 假设 "button_field" 是按钮字段
-                    content += `
-                        <button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
-                            </span>
-                            加售后群
-                        </button>
-                    `;
+                    content += 
+                        '<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">'+
+                            '<span class="fa-stack fa-lg">'+
+                                '<i class="fa fa-qq fa-stack-1x fa-inverse"></i>'+
+                            '</span>'+
+                            '加售后群'+
+                        '</button>'
+                    ;
                 } else {
                     content += data[i][part][k] || data[i][part]; // 支持数组或单值
                 }
