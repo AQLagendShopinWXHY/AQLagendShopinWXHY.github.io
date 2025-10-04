@@ -265,13 +265,13 @@ transform: translateY(2px);
 <script>
 const base = window.location.origin;
 const checkbox = document.getElementById('checkbox_pd');
+const downloadButton = document.getElementById("dowload_check");
 let timeout_tips;
 let links;
 
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
-        const downloadButton = document.getElementById("dowload_check");
         if (checkbox.checked) {
             downloadButton.disabled = false;
             downloadButton.style.backgroundColor = "#04AA6D"; // 绿色
@@ -279,7 +279,6 @@ let links;
         } else {
             downloadButton.disabled = true;
             downloadButton.style.backgroundColor = "rgba(136, 136, 136, 0.2)"; // 灰色
-
             downloadButton.textContent = "不给你点！"
         }
     });
@@ -435,6 +434,9 @@ let links;
                 modal.style.display = "none";
                 if (checkbox && checkbox.checked !== false) {
                                 checkbox.checked = false;
+                                downloadButton.disabled = true;
+                                downloadButton.style.backgroundColor = "rgba(136, 136, 136, 0.2)"; // 灰色
+                                downloadButton.textContent = "✓确认"
                             }
             }, { once: true });
         }
