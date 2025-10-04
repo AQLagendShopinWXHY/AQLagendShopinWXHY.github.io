@@ -448,12 +448,11 @@ let timeout_tips;
                     const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_WechatLinks.json");
                     var title = "关注辉夜公众号"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
-                }else if(modalData == "My"){
+                }else if(Array.isArray(modalData)){
                     const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips_downloadtrue.json");
-                    const tips = check_Tips(tip,modalData)
-                    console.log(modal)
-                    updateModalContent_DownloadTrue(modal, getCarddatahandle_DownloadTrue(modal),tips)
-                    console.log("触发了My效果")
+                    const tips = check_Tips(tip,modalData[0])
+                    //0标识符、1淘宝、2微店、3下载链接
+                    updateModalContent_DownloadTrue(modal, getCarddatahandle_DownloadTrue(modalData[0],modalData[1],modalData[2]),tips)
                 }
             })();
         }
@@ -495,13 +494,13 @@ let timeout_tips;
             return null
         }
 
-        function getCarddatahandle_DownloadTrue(modal){
-                content = '<a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">'+
-                    '<img src="mini_card_tb.png"/>'+
+        function getCarddatahandle_DownloadTrue(modal,taobaolink,weidianlink){
+                content = '<a href='+taobaolink+' target="_blank" class="shop-link">'+
+                    '<img src="'+modal+'_card_tb.png"/>'+
                     '<div class="shop-text taobao-text">淘宝</div>'+
                     '</a>'+
-                    '<a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">'+
-                    '<img src="mini_card_tb.png"/>'+
+                    '<a href='+weidianlink+' target="_blank" class="shop-link">'+
+                    '<img src="'+modal+'_card_wd.png"/>'+
                     '<div class="shop-text weidian-text">微店</div>'+
                     '</a>'
                 return content
@@ -562,19 +561,37 @@ let timeout_tips;
                     //因为是一个版本一个对应，不需要判断是否下一行为空
                     //没时间写了突出一个能跑就行.jpg
                     if(data[i][part][k]=="My"){
+                        const linkdata = [
+                            data[i][part][k],
+                            data[i][data_key[j+1]][k],
+                            data[i][data_key[j+2]][k],
+                            data[i][data_key[j+3]][k]
+                        ];
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+" data-modal-taobaolink="+data_key[j+1][k]+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+linkdata+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else if(data[i][part]=="mini"){
+                        const linkdata = [
+                            data[i][part][k],
+                            data[i][data_key[j+1]],
+                            data[i][data_key[j+2]],
+                            data[i][data_key[j+3]]
+                        ];
                         //迷你只有一个版本所以暂时不需要定位第几个
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part]+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+linkdata+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else if(data[i][part][k]=="keqi"){
+                        const linkdata = [
+                            data[i][part][k],
+                            data[i][data_key[j+1]][k],
+                            data[i][data_key[j+2]][k],
+                            data[i][data_key[j+3]][k]
+                        ];
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k]  + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k]  + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+linkdata+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else{
