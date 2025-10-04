@@ -483,6 +483,23 @@ let timeout_tips;
                 if(data[i][part][k]===null || part==="button_color"){
                     continue;
                 }
+
+                if(part==="use_card"){
+                    if(arrLength != 1){
+                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%'>" +
+                                            "<a href='" + data[i][part][k] + "' target='_blank'>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+1]][k] + ";'>点击跳转</button>" +
+                                            "</a></td>";
+                    continue;
+                    }else{
+                    content += "<td style='border:1px solid #000;width:30%'>" +
+                                            "<a href='" + data[i][part] + "' target='_blank'>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+1]] + ";'>点击跳转</button>" +
+                                            "</a></td>";
+                    continue;
+                    }
+                }
+
                 if(part==="URL"){
                     if(arrLength != 1){
                     content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%'>" +
