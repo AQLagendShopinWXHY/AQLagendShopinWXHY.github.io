@@ -266,8 +266,6 @@ transform: translateY(2px);
 const base = window.location.origin;
 let timeout_tips;
 let links;
-
-
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
@@ -289,6 +287,7 @@ let links;
 
 
     document.getElementById("dowload_check").addEventListener("click", function() {
+        document.getElementById('checkbox_pd').checked = false;
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
             window.open(links, "_blank");
