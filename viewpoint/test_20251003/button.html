@@ -517,14 +517,14 @@ let timeout_tips;
 
                 if(part==="use_card"){
                     if(arrLength != 1){
-                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%' data-modal-action='open' data-modal-target='myModal_2' data-modal-data='in_Download_true'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";'>点击跳转</button>" +
+                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%'>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data='in_Download_true'>点击跳转</button>" +
                                             "</td>";
                     continue;
                     }else{
 
                     content += "<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + "' data-modal-action='open' data-modal-target='myModal_2' data-modal-data='in_Download_true'>点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + "'data-modal-action='open' data-modal-target='myModal_2' data-modal-data='in_Download_true'>点击跳转</button>" +
                                             "</td>";
                     continue;
                     }
