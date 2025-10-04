@@ -125,7 +125,7 @@ transform: translateY(2px);
             }
         }
 
-        .close {
+        .close_buttonuse {
             color: #aaa;
             float: right;
             font-size: 28px;
@@ -135,8 +135,8 @@ transform: translateY(2px);
         }
 
 
-        .close:hover,
-        .close:focus {
+        .close_buttonuse:hover,
+        .close_buttonuse:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;

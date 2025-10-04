@@ -423,7 +423,7 @@ let links;
 
         // 监听模态框的关闭时事件
         modals.forEach(function(modal) {
-            var closeButton = modal.querySelector(".close");
+            var closeButton = modal.querySelector(".close_buttonuse");
             if (closeButton) {
                 closeButton.addEventListener("click", function() {
                     var targetModal = this.closest(".modal");
