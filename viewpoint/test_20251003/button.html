@@ -269,7 +269,6 @@ let links;
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
-
         const downloadButton = document.getElementById("dowload_check");
         if (checkbox.checked) {
             downloadButton.disabled = false;
@@ -287,7 +286,6 @@ let links;
 
 
     document.getElementById("dowload_check").addEventListener("click", function() {
-        document.getElementById('checkbox_pd').checked = false;
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
             window.open(links, "_blank");
@@ -433,6 +431,7 @@ let links;
             modal.querySelector(".modal-content").classList.add("modal-hide");
             modal.querySelector(".modal-content").addEventListener("animationend", function () {
                 modal.style.display = "none";
+                document.getElementById('checkbox_pd').checked = false;
             }, { once: true });
         }
 
