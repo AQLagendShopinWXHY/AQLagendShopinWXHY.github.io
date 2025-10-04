@@ -505,7 +505,6 @@ let timeout_tips;
                                                 "</span>"+
                                                 "</a>"+
                                             "</center></td>";
-                    document.getElementById("dowload_check").addEventListener("click", open_motaikuang);
                     continue;
                     }else{
                     content += "<td style='border:1px solid #000;width:30%'><a style='color:black'><center>" +"群已满人"
@@ -568,6 +567,10 @@ let timeout_tips;
                                     '</span>'+
                                 '加售后群'+
                                 '</button>'
+                                
+                                document.querySelector('[data-modal-target="myModal_2"]').addEventListener('click', function() {
+                                    document.getElementById('myModal_2').style.display = 'block';
+                                });
                     continue;
                     }else{
 
