@@ -743,9 +743,19 @@ let timeout_tips;
 
         // 当用户点击模态框外部时，关闭模态框
         window.onclick = function (event) {
-            modals.forEach(function(modal) {
-                if (event.target === modal) {
-                    closeModal(modal);
+            button.addEventListener("click", function() {
+                var targetId = this.dataset.modalTarget;
+                var targetModal = document.getElementById(targetId);
+
+                if (targetModal) {
+                    var action = this.dataset.modalAction;
+                    var modalData = this.dataset.modalData; // 获取自定义数据属性
+
+                    if (action === "open") {
+                        openModal(targetModal,modalData);
+                    } else if (action === "close") {
+                        closeModal(targetModal);
+                    }
                 }
             });
         };
