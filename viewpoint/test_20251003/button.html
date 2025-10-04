@@ -673,16 +673,18 @@ let timeout_tips;
             // 其余字段同一行显示同一索引内容
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
+                if(data[i][part][k]=== null || part==="button_color"){
+                    continue;
+                }
 
                 if(arrLength != 1){
                 // content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
-                data = '<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">'+
+                content += '<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">'+
                     '<span class="fa-stack fa-lg">'+
                     '<i class="fa fa-qq fa-stack-1x fa-inverse"></i>'+
                     '</span>'+
                     '加售后群'+
                     '</button>'
-                content = content+data
 
                 }else{
                 content += "<td style='border:1px solid #000;'>" + data[i][part]+ "</td>";
@@ -707,7 +709,20 @@ let timeout_tips;
             }
             if (contentElement) {
                 contentElement.innerHTML = content;
-                var modalButtons = document.querySelectorAll("[data-modal-action]");
+                document.addEventListener("click", function (e) {
+                    const button = e.target.closest("[data-modal-action='open']");
+                    if (button) {
+                        const modal = document.getElementById("myModal_2");
+                        if (modal) {
+                            modal.style.display = "block";
+                        }
+                    }
+                
+                    // 关闭模态框
+                    if (e.target.closest(".close")) {
+                        e.target.closest(".modal").style.display = "none";
+                    }
+                });
             }
             if (tipsElement) {
                 tipsElement.textContent = "Tips:"+tips;
