@@ -521,7 +521,7 @@ let timeout_tips;
                 }
 
             
-                if(data[i][part][k]===null || part==="button_color"){
+                if(data[i][part][k]===null || part==="button_color"|| part==="use_card_taobao"|| part==="use_card_weidian"|| part==="use_card_URL"){
                     continue;
                 }
 
@@ -533,8 +533,9 @@ let timeout_tips;
                                             "</td>";
                                             continue;
                     }else if(data[i][part][k]=="mini"){
+                        //迷你只有一个版本所以暂时不需要定位第几个
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k]  + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k]  + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part]+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else if(data[i][part][k]=="keqi"){
