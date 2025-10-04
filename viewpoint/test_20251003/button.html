@@ -710,13 +710,19 @@ let timeout_tips;
             if (contentElement) {
                 contentElement.innerHTML = content;
                 document.addEventListener("click", function (e) {
-                    const button = e.target.closest("[data-modal-action='open']");
-                    if (button) {
-                        const modal = document.getElementById("myModal_2");
-                        if (modal) {
-                            modal.style.display = "block";
-                        }
+                var targetId = this.dataset.modalTarget;
+                var targetModal = document.getElementById(targetId);
+
+                if (targetModal) {
+                    var action = this.dataset.modalAction;
+                    var modalData = this.dataset.modalData; // 获取自定义数据属性
+
+                    if (action === "open") {
+                        openModal(targetModal,modalData);
+                    } else if (action === "close") {
+                        closeModal(targetModal);
                     }
+                }
                 });
             }
             if (tipsElement) {
@@ -743,19 +749,9 @@ let timeout_tips;
 
         // 当用户点击模态框外部时，关闭模态框
         window.onclick = function (event) {
-            button.addEventListener("click", function() {
-                var targetId = this.dataset.modalTarget;
-                var targetModal = document.getElementById(targetId);
-
-                if (targetModal) {
-                    var action = this.dataset.modalAction;
-                    var modalData = this.dataset.modalData; // 获取自定义数据属性
-
-                    if (action === "open") {
-                        openModal(targetModal,modalData);
-                    } else if (action === "close") {
-                        closeModal(targetModal);
-                    }
+            modals.forEach(function(modal) {
+                if (event.target === modal) {
+                    closeModal(modal);
                 }
             });
         };
