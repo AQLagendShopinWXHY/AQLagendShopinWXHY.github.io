@@ -517,9 +517,17 @@ let timeout_tips;
 
                 if(part==="use_card"){
                     if(arrLength != 1){
-                    content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data='in_Download_true'>点击跳转</button>" +
-                                            "</td>";
+                    // content += "<td rowspan='" + pd_null(data[i][part],k) + "' style='border:1px solid #000;width:30%'>" +
+                    //                         "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data='in_Download_true'>点击跳转</button>" +
+                    //                         "</td>";
+
+                    content +=
+                                '<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">'+
+                                    '<span class="fa-stack fa-lg">'+
+                                    '<i class="fa fa-qq fa-stack-1x fa-inverse"></i>'+
+                                    '</span>'+
+                                '加售后群'+
+                                '</button>'
                     continue;
                     }else{
 
