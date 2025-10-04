@@ -451,7 +451,7 @@ let timeout_tips;
                 }else if(modalData == "My"){
                     const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips_downloadtrue.json");
                     const tips = check_Tips(tip,modalData)
-                    updateModalContent_DownloadTrue(modal, getCarddatahandle_DownloadTrue(modal, json_data),tips)
+                    updateModalContent_DownloadTrue(modal, getCarddatahandle_DownloadTrue(modal),tips)
                     console.log("触发了My效果")
                 }
             })();
