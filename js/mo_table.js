@@ -198,11 +198,11 @@ let links;
 
         function getCarddatahandle_DownloadTrue(modal,taobaolink,weidianlink){
                 content = '<a href='+taobaolink+' target="_blank" class="shop-link">'+
-                    '<img src="'+modal+'_card_tb.png"/>'+
+                    '<img src="./img/cardphoto/'+modal+'_card_tb.png"/>'+
                     '<div class="shop-text taobao-text">淘宝</div>'+
                     '</a>'+
                     '<a href='+weidianlink+' target="_blank" class="shop-link">'+
-                    '<img src="'+modal+'_card_wd.png"/>'+
+                    '<img src="./img/cardphoto/'+modal+'_card_wd.png"/>'+
                     '<div class="shop-text weidian-text">微店</div>'+
                     '</a>'
                 return content
