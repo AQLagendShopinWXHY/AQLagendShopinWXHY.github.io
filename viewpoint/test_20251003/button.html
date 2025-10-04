@@ -249,6 +249,7 @@ transform: translateY(2px);
             <center>
             <h3>请确认：您即将跳转下载的辅助需要使用该款卡密</h3>
             <p id="tips">Tips：要做一个对应的进入该页面就清除界面内容的，同时好好写绑定，就可以上线了</p>
+            <span>
                     <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
                     <img src="mini_card_tb.png"/>
                     <div class="shop-text taobao-text">淘宝</div>
@@ -257,6 +258,7 @@ transform: translateY(2px);
                     <img src="mini_card_tb.png"/>
                     <div class="shop-text weidian-text">微店</div>
                     </a>
+            </span>
             <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
             <span>
             <button class="button button3 close" style="margin:0 10px 0 10px;font-size: 16px;float:none;color:#FFFFFF;">&times;取消</button>
@@ -527,6 +529,7 @@ let timeout_tips;
 
                 if(part==="use_card"){
                     //因为是一个版本一个对应，不需要判断是否下一行为空
+                    //没时间写了突出一个能跑就行.jpg
                     if(data[i][part][k]=="My"){
                         content +="<td style='border:1px solid #000;width:30%'>" +
                                             "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+">点击跳转</button>" +
@@ -651,6 +654,46 @@ let timeout_tips;
         }
 
 
+    // <div id="myModal_2" class="modal">
+    //     <div class="modal-content modal-normal">
+    //         <center>
+    //         <h3>请确认：您即将跳转下载的辅助需要使用该款卡密</h3>
+    //         <p id="tips">Tips：要做一个对应的进入该页面就清除界面内容的，同时好好写绑定，就可以上线了</p>
+    //                 <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
+    //                 <img src="mini_card_tb.png"/>
+    //                 <div class="shop-text taobao-text">淘宝</div>
+    //                 </a>
+    //                 <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
+    //                 <img src="mini_card_tb.png"/>
+    //                 <div class="shop-text weidian-text">微店</div>
+    //                 </a>
+    //         <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
+    //         <span>
+    //         <button class="button button3 close" style="margin:0 10px 0 10px;font-size: 16px;float:none;color:#FFFFFF;">&times;取消</button>
+    //         <button class="button" style="margin:0 10px 0 10px;" id="dowload_check">&check;确认</button>
+    //         </span>
+    //         </center>
+    //     </div>
+    // </div>
+
+
+        function updateModalContent_DownloadTrue(modal,content,tips) {
+            // var titleElement = modal.querySelector("h3");
+            var contentElement = modal.querySelector("table");
+            var tipsElement = modal.querySelector("#tips");
+
+            // if (titleElement) {
+            //     titleElement.textContent = title;
+            // }
+            if (contentElement) {
+                contentElement.innerHTML = content;
+                // contentElement.textContent = content;
+            }
+            if (tipsElement) {
+                tipsElement.textContent = "Tips:"+tips;
+                // contentElement.textContent = content;
+            }
+        }
 //  <div id="myModal_2" class="modal">
 //         <div class="modal-content modal-normal">
 //             <center>
