@@ -1,7 +1,7 @@
 {
-  "name": "Hux Blog",
-  "short_name": "Hux Blog",
-  "description": "About an engineer & designer who loves web.",
+  "name": "辉夜售后 - 您的辅助一站式问题解决and便捷操作售后网站！",
+  "short_name": "辉夜售后",
+  "description": "您的辅助一站式问题解决and便捷操作售后网站&辉夜的个人店铺blog！",
   "icons": [{
     "src": "icons/128.png",
     "sizes": "128x128",
