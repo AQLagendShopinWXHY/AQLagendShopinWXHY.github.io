@@ -167,6 +167,10 @@ transform: translateY(2px);
   .weidian-text {
     background-color: #FF7100;
   }
+
+    span.no-gap {
+        font-size: 0; /* 消除换行和空格的影响 */
+    }
 </style>
 </head>
 <body>
@@ -226,12 +230,11 @@ transform: translateY(2px);
             <h3>请确认：您即将跳转下载的辅助需要使用该款卡密</h3>
             <p id="tips">Tips：要做一个对应的进入该页面就清除界面内容的，同时好好写绑定，就可以上线了</p>
             <p>
-                <span>
+                <span class="no-gap">
                     <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
                     <img src="mini_card_tb.png"/>
                     <div class="shop-text taobao-text">淘宝</div>
                     </a>
-                    
                     <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
                     <img src="mini_card_tb.png"/>
                     <div class="shop-text weidian-text">微店</div>
