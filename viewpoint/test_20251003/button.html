@@ -396,8 +396,8 @@ let timeout_tips;
         function openModal(modal,modalData) {
             modal.style.display = "block";
             modal.querySelector(".modal-content").classList.remove("modal-hide");
-            console.log(modalData)
             (async () => {
+                console.log(modalData)
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
                     const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
