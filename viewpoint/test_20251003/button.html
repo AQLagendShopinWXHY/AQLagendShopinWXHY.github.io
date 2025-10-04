@@ -651,90 +651,67 @@ let timeout_tips;
 //     </span>
 // 加售后群
 // </button>
-function getCarddatahandle_download(modal, data) {
-    var content = "";
-    var data_key = Object.keys(data[0]);
-    var data_keyFirst = data_key[0]; // 第一列的 key
- 
+        function getCarddatahandle_download(modal, data){
+            //测试获取到的标签id和异步获取到的json
+            //获取完整的标识符key
+            //标记组成tr的部分
+            var content = "";
+            var data_key = Object.keys(data[0]);
+            var data_keyFirst = Object.keys(data[0])[0];
+            
     for (var i = 0; i < data.length; i++) {
+        // 第一列rowspan
+
         var arrLength = Array.isArray(data[i][data_key[1]]) ? data[i][data_key[1]].length : 1;
- 
+
+
         for (var k = 0; k < arrLength; k++) {
             content += "<tr>";
-            
-            // 第一列（合并单元格）
             if (k === 0) {
-                content += `<td rowspan="${arrLength}" style="border:1px solid #000;">${data[i][data_keyFirst]}</td>`;
+                content += "<td rowspan='" + arrLength + "' style='border:1px solid #000;'>" + data[i][data_keyFirst] + "</td>";
             }
- 
-            // 其余列
+            // 其余字段同一行显示同一索引内容
             for (var j = 1; j < data_key.length; j++) {
                 var part = data_key[j];
-                if (data[i][part][k] === null || part === "button_color") {
+                if(data[i][part][k]===null || part==="button_color"){
                     continue;
                 }
- 
-                content += "<td style='border:1px solid #000;'>";
-                
-                // 如果是按钮字段，插入按钮；否则显示数据
-                if (arrLength > 1 && part === "button_field") { // 假设 "button_field" 是按钮字段
-                    content += 
-                        '<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">'+
-                            '<span class="fa-stack fa-lg">'+
-                                '<i class="fa fa-qq fa-stack-1x fa-inverse"></i>'+
-                            '</span>'+
-                            '加售后群'+
-                        '</button>'
-                    ;
-                } else {
-                    content += data[i][part][k] || data[i][part]; // 支持数组或单值
+
+                if(arrLength != 1){
+                content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
+                }else{
+                content += "<td style='border:1px solid #000;'>" + data[i][part]+ "</td>";
                 }
-                
-                content += "</td>";
+
             }
             content += "</tr>";
         }
     }
     return content;
-}
 
-function updateModalContent_download(modal, title, content, tips, updatetime) {
-    var titleElement = modal.querySelector("h3");
-    var contentElement = modal.querySelector(".modal-content"); // 改用 modal-content
-    var tipsElement = modal.querySelector("#tips");
-    var updateTimeElement = modal.querySelector("#update-time");
- 
-    if (titleElement) titleElement.textContent = title;
-    if (contentElement) contentElement.innerHTML = content; // 直接替换整个 modal-content
-    if (tipsElement) tipsElement.textContent = "Tips: " + tips;
-    if (updateTimeElement) updateTimeElement.textContent = "更新时间：" + updatetime;
+        }
 
-    document.addEventListener("click", function (e) {
-    if (e.target.closest("[data-modal-action='open']")) {
-        const button = e.target.closest("[data-modal-action='open']");
-        const modalTarget = button.getAttribute("data-modal-target");
-        const modalData = button.getAttribute("data-modal-data");
-        const modal = document.getElementById(modalTarget);
- 
-        if (modal) {
-            modal.style.display = "block";
-            
-            // 如果需要处理 modalData，可以在这里做
-            if (modalData === "in_Download_true") {
-                console.log("Download mode activated");
-                // 可以在这里更新模态框内容，例如：
-                // updateModalContent_download(modal, "下载确认", "您即将下载...", "请确认卡密匹配", "2023-10-01");
+        function updateModalContent_download(modal, title, content,tips,updatetime) {
+            var titleElement = modal.querySelector("h3");
+            var contentElement = modal.querySelector("table");
+            var tipsElement = modal.querySelector("#tips");
+            var updateTimeElement = modal.querySelector("#update-time");
+
+            if (titleElement) {
+                titleElement.textContent = title;
+            }
+            if (contentElement) {
+                contentElement.innerHTML = content;
+            }
+            if (tipsElement) {
+                tipsElement.textContent = "Tips:"+tips;
+                // contentElement.textContent = content;
+            }
+            if (updateTimeElement) {
+                updateTimeElement.textContent = "更新时间："+updatetime;
+                // contentElement.textContent = content;
             }
         }
-    }
- 
-    if (e.target.closest(".close")) {
-        const modal = e.target.closest(".modal");
-        if (modal) modal.style.display = "none";
-    }
-});
-}
-
 
 
         // 监听模态框的关闭时事件
