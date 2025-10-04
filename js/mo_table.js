@@ -95,35 +95,35 @@ let links;
                 }
 
                 if(modalData==="in_GetCard_Buy"){
-                    const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
+                    const tip = await fetchData("./viewpoint/json/CARD_Shouhou_Tips.json");
                     const tips = check_Tips(tip,modalData)
-                    const timelist = await fetchData("/viewpoint/json/CARD_Shouhou_Latest_time.json")
+                    const timelist = await fetchData("./viewpoint/json/CARD_Shouhou_Latest_time.json")
                     const updatetime = check_Times(timelist,modalData)
-                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_GETCard_BUY.json");
+                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_GETCard_BUY.json");
                     var title = "卡密购买"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_GetCard_Get"){
-                    const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
+                    const tip = await fetchData("./viewpoint/json/CARD_Shouhou_Tips.json");
                     const tips = check_Tips(tip,modalData)
-                    const timelist = await fetchData("/viewpoint/json/CARD_Shouhou_Latest_time.json")
+                    const timelist = await fetchData("./viewpoint/json/CARD_Shouhou_Latest_time.json")
                     const updatetime = check_Times(timelist,modalData)
-                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_GETCard_URL.json");
+                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_GETCard_URL.json");
                     var title = "卡密提取"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_AfterCard_QQgroup"){
-                    const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
+                    const tip = await fetchData("./viewpoint/json/CARD_Shouhou_Tips.json");
                     const tips = check_Tips(tip,modalData)
-                    const timelist = await fetchData("/viewpoint/json/CARD_Shouhou_Latest_time.json")
+                    const timelist = await fetchData("./viewpoint/json/CARD_Shouhou_Latest_time.json")
                     const updatetime = check_Times(timelist,modalData)
-                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_AfterCard_QQGroup.json");
+                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_AfterCard_QQGroup.json");
                     var title = "加入售后群"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_Download"){
-                    const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
+                    const tip = await fetchData("./viewpoint/json/CARD_Shouhou_Tips.json");
                     const tips = check_Tips(tip,modalData)
-                    const timelist = await fetchData("/viewpoint/json/CARD_Shouhou_Latest_time.json")
+                    const timelist = await fetchData("./viewpoint/json/CARD_Shouhou_Latest_time.json")
                     const updatetime = check_Times(timelist,modalData)
-                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_StartDownload_URL.json");
+                    const json_data = await fetchData("./viewpoint/json/CARD_Shouhou_StartDownload_URL.json");
                     var title = "辅助下载"
                     updateModalContent_download(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                     // updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
@@ -231,7 +231,7 @@ let links;
                 if(part==="ingroup_URL"){
                     if(data[i][part][k] != null){
                     content += "<td style='border:1px solid #000;width:30%'><center>" +
-                                                "<a href='" + data[i][part] + "' target='_blank'>"+
+                                                "<a href='" + data[i][part][k] + "' target='_blank'>"+
                                                 '<span class="fa-stack fa-lg">'+
                                                     '<i class="fa fa-circle fa-stack-2x" style="color:#008CBA"></i>'+
                                                     '<i class="fa fa-stack-1x fa-inverse fa-qq"></i>'+
