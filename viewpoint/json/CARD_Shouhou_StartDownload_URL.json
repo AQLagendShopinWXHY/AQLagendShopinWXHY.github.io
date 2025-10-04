@@ -11,7 +11,22 @@
       "电脑（Windows64位）",
       "手机（Android）"
     ],
-    "URL": [
+    "use_card": [
+      "My",
+      "My",
+      "My"
+    ],
+    "use_card_taobao": [
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101"
+    ],
+    "use_card_weidian": [
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6"
+    ],
+    "use_card_URL": [
       "https://www.123684.com/s/Xn2Rjv-wG0F3",
       "https://www.123684.com/s/Xn2Rjv-MG0F3",
       "https://www.123684.com/s/Xn2Rjv-gG0F3"
@@ -26,7 +41,10 @@
     "where": "迷你辅助",
     "Card_need": "进阶版功能需卡密",
     "platform": "电脑（Windows）",
-    "URL": "https://www.123684.com/s/Xn2Rjv-FG0F3",
+    "use_card": "mini",
+    "use_card_taobao": "https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321",
+    "use_card_weidian": "https://weidian.com/item.html?itemID=7009213820&spider_token=fe99",
+    "use_card_URL": "https://www.123684.com/s/Xn2Rjv-FG0F3",
     "button_color": "#28cee5"
   },
   {
@@ -39,7 +57,19 @@
       "电脑（Windows）",
       "手机（Android）"
     ],
-    "URL": [
+    "use_card": [
+      null,
+      "keqi"
+    ],
+    "use_card_taobao": [
+      null,
+      "https://item.taobao.com/item.htm?ft=t&id=794583946038&skuId=6091197615282"
+    ],
+    "use_card_weidian": [
+      null,
+      "https://weidian.com/item.html?itemID=7238810720&spider_token=62ad"
+    ],
+    "use_card_URL": [
       "https://www.123684.com/s/Xn2Rjv-YG0F3",
       "https://www.123pan.com/s/fGiZjv-fwTjv.html"
     ],

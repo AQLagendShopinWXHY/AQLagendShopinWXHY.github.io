@@ -366,7 +366,6 @@ let links;
                 }
                 //字符串解析
 
-                console.log(modalData,typeof modalData,Array.isArray(modalData))
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
                     const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips.json");
@@ -397,7 +396,7 @@ let links;
                     const tips = check_Tips(tip,modalData)
                     const timelist = await fetchData("/viewpoint/json/CARD_Shouhou_Latest_time.json")
                     const updatetime = check_Times(timelist,modalData)
-                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_StartDownload_URL2.0.json");
+                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_StartDownload_URL.json");
                     var title = "辅助下载"
                     updateModalContent_download(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                     // updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
@@ -473,11 +472,11 @@ let links;
 
         function getCarddatahandle_DownloadTrue(modal,taobaolink,weidianlink){
                 content = '<a href='+taobaolink+' target="_blank" class="shop-link">'+
-                    '<img src="'+modal+'_card_tb.png"/>'+
+                    '<img src="/img/cardphoto/'+modal+'_card_tb.png"/>'+
                     '<div class="shop-text taobao-text">淘宝</div>'+
                     '</a>'+
                     '<a href='+weidianlink+' target="_blank" class="shop-link">'+
-                    '<img src="'+modal+'_card_wd.png"/>'+
+                    '<img src="/img/cardphoto/'+modal+'_card_wd.png"/>'+
                     '<div class="shop-text weidian-text">微店</div>'+
                     '</a>'
                 return content
