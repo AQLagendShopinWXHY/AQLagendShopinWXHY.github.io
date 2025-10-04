@@ -264,6 +264,9 @@ transform: translateY(2px);
 </body>
 <script>
 const base = window.location.origin;
+let timeout_tips;
+let links;
+
 
     //单独的确认勾选才可以点button事件
     document.getElementById("checkbox_pd").addEventListener("change", function() {
@@ -282,13 +285,13 @@ const base = window.location.origin;
         }
     });
 
-let timeout_tips;
+
 
 
     document.getElementById("dowload_check").addEventListener("click", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
-            window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
+            window.open(links, "_blank");
         } else {
             clearTimeout(timeout_tips);
             // 打开提示模态框
@@ -419,6 +422,7 @@ let timeout_tips;
                     const tip = await fetchData("/viewpoint/json/CARD_Shouhou_Tips_downloadtrue.json");
                     const tips = check_Tips(tip,modalData[0])
                     //0标识符、1淘宝、2微店、3下载链接
+                    links = modalData[3];
                     updateModalContent_DownloadTrue(modal, getCarddatahandle_DownloadTrue(modalData[0],modalData[1],modalData[2]),tips)
                 }
             })();
