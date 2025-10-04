@@ -566,9 +566,9 @@ let timeout_tips;
                             linkdata.push(data[i][data_key[j+1]][k])
                             linkdata.push(data[i][data_key[j+2]][k])
                             linkdata.push(data[i][data_key[j+3]][k])
-                        console.log(Array.isArray(linkdata))
+
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+linkdata+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+JSON.stringify(linkdata)+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else if(data[i][part]=="mini"){
@@ -580,7 +580,7 @@ let timeout_tips;
                         ];
                         //迷你只有一个版本所以暂时不需要定位第几个
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+linkdata+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+JSON.stringify(linkdata)+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else if(data[i][part][k]=="keqi"){
@@ -591,7 +591,7 @@ let timeout_tips;
                             data[i][data_key[j+3]][k]
                         ];
                         content +="<td style='border:1px solid #000;width:30%'>" +
-                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k]  + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+linkdata+">点击跳转</button>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]][k]  + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+JSON.stringify(linkdata)+">点击跳转</button>" +
                                             "</td>";
                                             continue;
                     }else{
