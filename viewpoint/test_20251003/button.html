@@ -137,7 +137,36 @@ transform: translateY(2px);
             -webkit-tap-highlight-color: rgba(255,0,0,0);
         }
 
-
+.shop-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .shop-link img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .shop-text {
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 0 0 5px 5px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .taobao-text {
+    background-color: #FF5000;
+  }
+  
+  .weidian-text {
+    background-color: #FF7100;
+  }
 </style>
 </head>
 <body>
@@ -198,8 +227,15 @@ transform: translateY(2px);
             <p id="tips">Tips：要做一个对应的进入该页面就清除界面内容的，同时好好写绑定，就可以上线了</p>
             <p>
                 <span>
-                    <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank"><img src="mini_card_tb.png" style="width: 200px;"/>淘宝</a>
-                    <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank"><img src="mini_card_tb.png" style="width: 200px;"/>微店</a>
+                    <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
+                    <img src="mini_card_tb.png"/>
+                    <div class="shop-text taobao-text">淘宝</div>
+                    </a>
+                    
+                    <a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank" class="shop-link">
+                    <img src="mini_card_tb.png"/>
+                    <div class="shop-text weidian-text">微店</div>
+                    </a>
                 </span>
             </p>
             <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
