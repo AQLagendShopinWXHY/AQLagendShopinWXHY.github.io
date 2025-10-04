@@ -423,7 +423,7 @@ let timeout_tips;
                 }else if(modalData==="in_Download"){
                     const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_StartDownload_URL2.0.json");
                     var title = "辅助下载"
-                    updateModalContent_download(modal, title, getCarddatahandle_download(modal, json_data),tips,updatetime)
+                    updateModalContent_download(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                     // updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_FansClub"){
                     const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_FansClub.json");
@@ -524,6 +524,24 @@ let timeout_tips;
                 if(data[i][part][k]===null || part==="button_color"){
                     continue;
                 }
+
+                if(part==="use_card"){
+                    //因为是一个版本一个对应，不需要判断是否下一行为空
+                    if(data[i][part][k]=="My"){
+                        content +="<td style='border:1px solid #000;width:30%'>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+">点击跳转</button>" +
+                                            "</td>";
+                    }else if(data[i][part][k]=="mini"){
+                        content +="<td style='border:1px solid #000;width:30%'>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+">点击跳转</button>" +
+                                            "</td>";
+                    }else if(data[i][part][k]=="keqi"){
+                        content +="<td style='border:1px solid #000;width:30%'>" +
+                                            "<button class='button' style='background-color:" + data[i][data_key[j+4]] + ";' data-modal-action='open' data-modal-target='myModal_2' data-modal-data="+data[i][part][k]+">点击跳转</button>" +
+                                            "</td>";
+                    }
+                }
+
 
                 if(part==="URL"){
                     if(arrLength != 1){
@@ -651,52 +669,6 @@ let timeout_tips;
 //     </span>
 // 加售后群
 // </button>
-        function getCarddatahandle_download(modal, data){
-            //测试获取到的标签id和异步获取到的json
-            //获取完整的标识符key
-            //标记组成tr的部分
-            var content = "";
-            var data_key = Object.keys(data[0]);
-            var data_keyFirst = Object.keys(data[0])[0];
-            
-    for (var i = 0; i < data.length; i++) {
-        // 第一列rowspan
-
-        var arrLength = Array.isArray(data[i][data_key[1]]) ? data[i][data_key[1]].length : 1;
-
-
-        for (var k = 0; k < arrLength; k++) {
-            content += "<tr>";
-            if (k === 0) {
-                content += "<td rowspan='" + arrLength + "' style='border:1px solid #000;'>" + data[i][data_keyFirst] + "</td>";
-            }
-            // 其余字段同一行显示同一索引内容
-            for (var j = 1; j < data_key.length; j++) {
-                var part = data_key[j];
-                if(data[i][part][k]=== null || part==="button_color"){
-                    continue;
-                }
-
-                if(arrLength != 1){
-                // content += "<td rowspan='" + pd_null(data[i][part],k) + "'style='border:1px solid #000;'>" + data[i][part][k] + "</td>";
-                content += '<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">'+
-                    '<span class="fa-stack fa-lg">'+
-                    '<i class="fa fa-qq fa-stack-1x fa-inverse"></i>'+
-                    '</span>'+
-                    '加售后群'+
-                    '</button>'
-
-                }else{
-                content += "<td style='border:1px solid #000;'>" + data[i][part]+ "</td>";
-                }
-
-            }
-            content += "</tr>";
-        }
-    }
-    return content;
-
-        }
 
         function updateModalContent_download(modal, title, content,tips,updatetime) {
             var titleElement = modal.querySelector("h3");
@@ -709,69 +681,33 @@ let timeout_tips;
             }
             if (contentElement) {
                 contentElement.innerHTML = content;
-                    // 监听整个文档的点击事件（事件委托，适用于动态生成的元素）
+                contentElement.addEventListener("click", function (e) {
+                    // 检查点击的目标元素或其祖先元素是否匹配选择器 [data-modal-action='open']
+                    // closest() 方法会从当前元素向上查找匹配的祖先，直到文档根节点
+                    const button = e.target.closest("[data-modal-action='open']");
+                    // 如果找到了匹配的按钮（button 不为 null）
+                        var targetId = button.dataset.modalTarget;
+                        var targetModal = document.getElementById(targetId);
+                        if (targetModal) {
+                        var action = button.dataset.modalAction;
+                        var modalData = button.dataset.modalData; // 获取自定义数据属性
 
-
-        // modalButtons.forEach(function(button) {
-        //     button.addEventListener("click", function() {
-        //         var targetId = this.dataset.modalTarget;
-        //         var targetModal = document.getElementById(targetId);
-
-        //         if (targetModal) {
-        //             var action = this.dataset.modalAction;
-        //             var modalData = this.dataset.modalData; // 获取自定义数据属性
-
-        //             if (action === "open") {
-        //                 openModal(targetModal,modalData);
-        //             } else if (action === "close") {
-        //                 closeModal(targetModal);
-        //             }
-        //         }
-        //     });
-        // });
-
-                    contentElement.addEventListener("click", function (e) {
-                        // 检查点击的目标元素或其祖先元素是否匹配选择器 [data-modal-action='open']
-                        // closest() 方法会从当前元素向上查找匹配的祖先，直到文档根节点
-                        const button = e.target.closest("[data-modal-action='open']");
-                        // 如果找到了匹配的按钮（button 不为 null）
-                            var targetId = button.dataset.modalTarget;
-                            var targetModal = document.getElementById(targetId);
-                            if (targetModal) {
-                            var action = button.dataset.modalAction;
-                            var modalData = button.dataset.modalData; // 获取自定义数据属性
-
-                            if (action === "open") {
-                                openModal(targetModal,modalData);
-                            } else if (action === "close") {
-                                closeModal(targetModal);
-                            }
+                        if (action === "open") {
+                            openModal(targetModal,modalData);
+                        } else if (action === "close") {
+                            closeModal(targetModal);
                         }
+                    }
 
-
-                            // 获取按钮的 data-modal-target 属性值（这里假设是 "myModal_2"）
-                            // 但代码中直接硬编码了 "myModal_2"，可能应该改为动态获取：
-                            // const modalTarget = button.getAttribute("data-modal-target");
-                            // const modal = document.getElementById(modalTarget);
-                            // const modal_2 = document.getElementById("myModal_2");
-                            // // 如果模态框存在
-                            // if (modal_2) {
-                            //     // 显示模态框（通过修改 style.display 属性）
-                            //     modal.style.display = "block";
-                            //     modal_2.style.display = "block";
-                            // }
-                            // 注意：这里没有 else 处理模态框不存在的情况
-
-
-                        window.onclick = function (event) {
-                            modals.forEach(function(modal) {
-                                if (event.target === modal) {
-                                    closeModal(modal);
-                                }
-                            });
-                        };
-                        // 注意：这里没有处理按钮不存在的情况（即点击页面其他区域时无事发生）
-                    });
+                    window.onclick = function (event) {
+                        modals.forEach(function(modal) {
+                            if (event.target === modal) {
+                                closeModal(modal);
+                            }
+                        });
+                    };
+                    // 注意：这里没有处理按钮不存在的情况（即点击页面其他区域时无事发生）
+                });
             }
             if (tipsElement) {
                 tipsElement.textContent = "Tips:"+tips;
