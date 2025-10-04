@@ -142,24 +142,37 @@ transform: translateY(2px);
             -webkit-tap-highlight-color: rgba(255,0,0,0);
         }
 
-        /* @media (max-width: 752px) {
-            .modal-content {
-                width: 95%;
-                margin: 20% auto;
-                padding-bottom: 0;
-                transform: scale(0.6); 
-            }
-            .modal-content h3 {
-                font-size: 10px;
-            }
-            .modal-content p {
-                font-size: 5px;
-            }
-            .modal-content table {
-            max-width: 710px;
-            }
-        } */
-
+        .shop-link {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        
+        .shop-link img {
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .shop-text {
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 0 0 5px 5px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .taobao-text {
+            background-color: #FF5000;
+        }
+        
+        .weidian-text {
+            background-color: #FF7100;
+        }
+        
 @media (max-width: 752px) {
     .modal-content {
         width: calc(95%); 
