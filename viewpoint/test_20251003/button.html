@@ -710,7 +710,7 @@ let timeout_tips;
             if (contentElement) {
                 contentElement.innerHTML = content;
                     // 监听整个文档的点击事件（事件委托，适用于动态生成的元素）
-                    contentElement.innerHTML.addEventListener("click", function (e) {
+                    contentElement.addEventListener("click", function (e) {
                         // 检查点击的目标元素或其祖先元素是否匹配选择器 [data-modal-action='open']
                         // closest() 方法会从当前元素向上查找匹配的祖先，直到文档根节点
                         const button = e.target.closest("[data-modal-action='open']");
