@@ -200,14 +200,6 @@ transform: translateY(2px);
 加售后群
 </button>
 
-<button class="button button3" data-modal-action="open" data-modal-target="myModal_2" data-modal-data="in_Download_true">
-    <span class="fa-stack fa-lg">
-    <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
-    </span>
-加售后群
-</button>
-
-
 
 
 
@@ -293,6 +285,7 @@ const base = window.location.origin;
 let timeout_tips;
 
     function open_motaikuang(){
+        console.log(modalData)
         const checkbox = document.querySelector("input[type='checkbox']");
         if (checkbox.checked) {
             window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
@@ -398,18 +391,17 @@ let timeout_tips;
             modal.querySelector(".modal-content").classList.remove("modal-hide");
             (async () => {
 
-
                 if (typeof modalData === "string") {
                     try {
                         modalData = JSON.parse(modalData);
                     } catch (e) {
-                        // 如果不是 JSON，保持原样（可能是 "in_GetCard_Buy"）
                         modalData = modalData;
                     }
                 } else {
-                    // 如果不是字符串，直接使用
                     modalData = modalData;
                 }
+                //字符串解析
+
                 console.log(modalData,typeof modalData,Array.isArray(modalData))
                 if(modalData==="in_GetCard_Buy"){
                     //修改模态框中的相关内容
@@ -586,7 +578,7 @@ let timeout_tips;
                                             continue;
                     }else if(data[i][part]=="mini"){
                         const linkdata = [
-                            data[i][part][k],
+                            data[i][part],
                             data[i][data_key[j+1]],
                             data[i][data_key[j+2]],
                             data[i][data_key[j+3]]
@@ -853,5 +845,32 @@ let timeout_tips;
                 }
             });
         };
+
+// function processModalData(modalData) {
+//     let result;
+ 
+//     // 1. 如果是字符串，尝试解析 JSON
+//     if (typeof modalData === "string") {
+//         try {
+//             result = JSON.parse(modalData);
+//         } catch (e) {
+//             // 如果不是 JSON，保持原样（可能是 "in_GetCard_Buy"）
+//             result = modalData;
+//         }
+//     } else {
+//         // 如果不是字符串，直接使用
+//         result = modalData;
+//     }
+ 
+//     // 2. 检查是否是数组
+//     if (Array.isArray(result)) {
+//         console.log("成功解析为数组:", result);
+//         return result;
+//     } else {
+//         console.log("不是数组:", result);
+//         return result;
+//     }
+// }
+
     </script>
 </html>
