@@ -284,44 +284,6 @@ const base = window.location.origin;
 
 let timeout_tips;
 
-    function open_motaikuang(){
-        console.log(modalData)
-        const checkbox = document.querySelector("input[type='checkbox']");
-        if (checkbox.checked) {
-            window.open("https://www.123684.com/s/Xn2Rjv-FG0F3", "_blank");
-        } else {
-            clearTimeout(timeout_tips);
-            // 打开提示模态框
-            var checkfalseModal = document.getElementById("myModal_checkfalse");
-            checkfalseModal.style.display = "block";
-            checkfalseModal.querySelector(".modal-content").classList.remove("modal-hide");
-
-            function close_function(){
-                checkfalseModal.querySelector(".modal-content").classList.add("modal-hide");
-                checkfalseModal.querySelector(".modal-content").addEventListener("animationend", function () {
-                checkfalseModal.style.display = "none";
-                }, { once: true });
-            }
-
-            // 3秒后自动关闭提示模态框
-            timeout_tips = setTimeout(function() {
-                close_function()
-                checkfalseModal.removeEventListener("click",remove_setTimeOut);
-            }, 3000); // 3000毫秒后关闭
-
-            function remove_setTimeOut(e){
-                if(e.target === checkfalseModal || e.target.closest("#myModal_checkfalse")){
-                    clearTimeout(timeout_tips);
-                    //还是确保一下吧
-                    close_function();
-                    checkfalseModal.removeEventListener("click",remove_setTimeOut);
-                }
-            }
-
-            checkfalseModal.addEventListener("click",remove_setTimeOut);
-        }
-    }
-
 
     document.getElementById("dowload_check").addEventListener("click", function() {
         const checkbox = document.querySelector("input[type='checkbox']");
