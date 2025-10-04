@@ -195,9 +195,10 @@ transform: translateY(2px);
         <div class="modal-content modal-normal">
             <center>
             <h3>请确认：您即将跳转下载的辅助需要使用该款卡密</h3>
-            <p><a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank"><img src="mini_card.png" style="width: 300px;"/></a></p>
+            <p id="tips">Tips：要做一个对应的进入该页面就清除界面内容的，同时好好写绑定，就可以上线了</p>
+            <p><a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank"><img src="mini_card_tb.png" style="width: 300px;"/>淘宝</a></p>
+            <p><a href="https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321" target="_blank"><img src="mini_card_tb.png" style="width: 300px;"/>微店</a></p>
             <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
-            <a>Tips：要做一个对应的进入该页面就清除界面内容的，同时好好写绑定，就可以上线了</a>
             <span>
             <button class="button button3 close" style="margin:0 10px 0 10px;font-size: 16px;float:none;color:#FFFFFF;">&times;取消</button>
             <button class="button" style="margin:0 10px 0 10px;" id="dowload_check">&check;确认</button>
@@ -321,7 +322,7 @@ let timeout_tips;
                     var title = "加入售后群"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_Download"){
-                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_StartDownload_URL.json");
+                    const json_data = await fetchData("/viewpoint/json/CARD_Shouhou_StartDownload_URL2.0.json");
                     var title = "辅助下载"
                     updateModalContent(modal, title, getCarddatahandle(modal, json_data),tips,updatetime)
                 }else if(modalData==="in_FansClub"){
