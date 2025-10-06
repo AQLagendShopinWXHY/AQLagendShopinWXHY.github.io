@@ -77,5 +77,15 @@
       "#9f9f9f",
       "#9f9f9f"
     ]
+  },
+  {
+    "where": "My奥拉辅助",
+    "Card_need": "无需卡密",
+    "platform": "电脑（Windows）",
+    "use_card": null,
+    "use_card_taobao": null,
+    "use_card_weidian": null,
+    "use_card_URL": "https://www.123684.com/s/Xn2Rjv-mD0F3",
+    "button_color": "#FF6900"
   }
 ]
