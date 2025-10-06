@@ -5,7 +5,7 @@
   },
   {
     "where": "in_Download",
-    "Tips": "无"
+    "Tips": "手机版无法安装时，请断网安装"
   },
   {
     "where": "in_AfterCard_QQgroup",
