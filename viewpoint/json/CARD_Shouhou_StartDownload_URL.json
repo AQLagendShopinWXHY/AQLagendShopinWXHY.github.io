@@ -4,34 +4,41 @@
     "Card_need": [
       "需卡密",
       null,
-      null
+      null,
+      "无需卡密"
     ],
     "platform": [
       "电脑（Windows32位）",
       "电脑（Windows64位）",
-      "手机（Android）"
+      "手机（Android）",
+      "苹果电脑（Mac）"
     ],
     "use_card": [
       "My",
       "My",
-      "My"
+      "My",
+      null
     ],
     "use_card_taobao": [
       "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
       "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
-      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101"
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      null
     ],
     "use_card_weidian": [
       "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
       "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
-      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6"
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      null
     ],
     "use_card_URL": [
       "https://www.123684.com/s/Xn2Rjv-wG0F3",
       "https://www.123684.com/s/Xn2Rjv-MG0F3",
-      "https://www.123684.com/s/Xn2Rjv-QD0F3"
+      "https://www.123684.com/s/Xn2Rjv-QD0F3",
+      "https://www.123684.com/s/Xn2Rjv-kD0F3"
     ],
     "button_color": [
+      "#FF6900",
       "#FF6900",
       "#FF6900",
       "#FF6900"
@@ -77,15 +84,5 @@
       "#9f9f9f",
       "#9f9f9f"
     ]
-  },
-  {
-    "where": "My奥拉辅助",
-    "Card_need": "无需卡密",
-    "platform": "电脑（Windows）",
-    "use_card": null,
-    "use_card_taobao": null,
-    "use_card_weidian": null,
-    "use_card_URL": "https://www.123684.com/s/Xn2Rjv-mD0F3",
-    "button_color": "#FF6900"
   }
 ]
