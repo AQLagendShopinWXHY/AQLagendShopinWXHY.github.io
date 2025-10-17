@@ -1,6 +1,6 @@
 ---
 layout:       post
-title:        "关于2025.10.17各辅助无法进入游戏的公告"
+title:        "关于各辅助无法进入游戏的公告"
 author:       "辉夜售后"
 header-style: text
 catalog:      true
