@@ -1,0 +1,75 @@
+[
+  {
+    "where": "My",
+    "buycard": [
+      "淘宝",
+      "微店",
+      null
+    ],
+    "desc": [
+      "年卡",
+      "年卡",
+      "临时卡"
+    ],
+    "URL": [
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      "https://weidian.com/item.html?itemID=7496257044&spider_token=6dba"
+    ],
+    "button_color": [
+      "#FF6900",
+      "#FF6900",
+      "#FF6900"
+    ]
+  },
+  {
+    "where": "迷你",
+    "buycard": [
+      "淘宝",
+      null,
+      "微店"
+    ],
+    "desc": [
+      "年卡",
+      "永久卡",
+      "年卡/永久卡"
+    ],
+    "URL": [
+      "https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970320",
+      "https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321",
+      "https://weidian.com/item.html?itemID=7009213820&spider_token=fe99"
+    ],
+    "button_color": [
+      "#28cee5",
+      "#28cee5",
+      "#28cee5"
+    ]
+  },
+  {
+    "where": "小氪奇",
+    "buycard": [
+      "淘宝",
+      null,
+      null,
+      "微店"
+    ],
+    "desc": [
+      "月卡",
+      "季卡",
+      "年卡",
+      "月卡/季卡/年卡"
+    ],
+    "URL": [
+      "https://item.taobao.com/item.htm?ft=t&id=794583946038&skuId=5535995893882",
+      "https://item.taobao.com/item.htm?ft=t&id=794583946038&skuId=5535995893881",
+      "https://item.taobao.com/item.htm?ft=t&id=794583946038&skuId=6091197615282",
+      "https://weidian.com/item.html?itemID=7238810720&spider_token=62ad"
+    ],
+    "button_color": [
+      "#9f9f9f",
+      "#9f9f9f",
+      "#9f9f9f",
+      "#9f9f9f"
+    ]
+  }
+]

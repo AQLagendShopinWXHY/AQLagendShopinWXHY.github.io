@@ -1,0 +1,19 @@
+{
+  "name": "辉夜售后|奥奇们的卡密售后小助手",
+  "short_name": "WXHY Shop",
+  "description": "About shoping in taobao and weidian in WXHYSHOP.",
+  "icons": [{
+    "src": "icons/128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#fff",
+  "theme_color": "#000",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}

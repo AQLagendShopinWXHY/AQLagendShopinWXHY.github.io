@@ -1,0 +1,74 @@
+[
+  {
+    "where": "My",
+    "desc": [
+      "售后①群",
+      "售后②群",
+      "售后③群",
+      "售后④群",
+      "售后⑤群",
+      "售后⑥群",
+      "售后⑦群"
+    ],
+    "QQ_Group": [
+      450363520,
+      590575625,
+      122647569,
+      602207618,
+      892903158,
+      962709275,
+      1060283573
+    ],
+    "ingroup_URL": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "https://qm.qq.com/q/vBdKl0kBWw"
+    ]
+  },
+  {
+    "where": "迷你",
+    "desc": [
+      "售后①群",
+      "售后②群",
+      "售后③群",
+      "售后④群"
+    ],
+    "QQ_Group": [
+      927667856,
+      723879687,
+      615893895,
+      466266387
+    ],
+    "ingroup_URL": [
+      "https://qm.qq.com/q/PvoWBUFZ64",
+      null,
+      "https://qm.qq.com/q/6TJSLwduMM",
+      null
+    ]
+  },
+  {
+    "where": "小氪奇",
+    "desc": [
+      "奥奇-氪奇交流群⑥",
+      "奥奇-氪奇交流群⑦",
+      "小氪奇的聊天群⑨",
+      "小氪奇的聊天群⑩"
+    ],
+    "QQ_Group": [
+      710480657,
+      975500761,
+      80868440,
+      930318641
+    ],
+    "ingroup_URL": [
+      "https://qm.qq.com/q/jRlqfVP9Zu",
+      "https://qm.qq.com/q/zbOgsmNdZK",
+      "https://qm.qq.com/q/AdfILrAcQ8",
+      "https://qm.qq.com/q/81417PVuIE"
+    ]
+  }
+]

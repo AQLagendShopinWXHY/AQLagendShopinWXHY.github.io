@@ -1,0 +1,26 @@
+[
+  {
+    "where": "in_GetCard_Get",
+    "time": 20250923
+  },
+  {
+    "where": "in_Download",
+    "time": 20251107
+  },
+  {
+    "where": "in_AfterCard_QQgroup",
+    "time": 20251006
+  },
+  {
+    "where": "in_GetCard_Buy",
+    "time": 20250923
+  },
+  {
+    "where": "in_FansClub",
+    "time": 20250923
+  },
+  {
+    "where": "in_WechatLinks",
+    "time": 20250923
+  }
+]

@@ -1,0 +1,186 @@
+{% comment %}
+    @param {string} type - 'page' | 'post' | 'keynote'
+    @param {boolean} short
+{% endcomment %}
+
+{% if include.type == 'post' or include.type == 'page' %}
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
+        background: {{ page.header-bg-css }};
+    }
+
+    {% if page.header-mask %}
+    header.intro-header .header-mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: rgba(0,0,0, {{ page.header-mask }});
+    }
+    {% endif %}
+</style>
+{% endif %}
+
+{% if include.type == 'post' %}
+{% if page.header-style == 'text' %}
+<header class="intro-header style-text" >
+{% else %}
+<header class="intro-header" >
+{% endif %}
+    <div class="header-mask"></div>
+    {% if page.header-img-credit %}
+    <div class="header-img-credit">
+        Image by <a href="//{{page.header-img-credit-href}}">{{page.header-img-credit}}</a>
+    </div>
+    {% endif %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% comment %} always create a h2 for keeping the margin {% endcomment %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    <!-- <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%B %-d, %Y" }}</span> -->
+                    <span class="meta">By {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %} on {{ page.date | date: "%Y.%-m.%-d" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endif %}
+
+{% if include.type == 'keynote' %}
+<style type="text/css">
+    header.intro-header{
+        height: 500px;
+        overflow: hidden;
+    }
+    header.intro-header .container{
+        visibility: hidden;
+    }
+    header iframe{
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+</style>
+<header class="intro-header" >
+    <iframe src="{{page.iframe}}"></iframe>
+    <!-- keep for SEO -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% comment %} always create a h2 for keeping the margin {% endcomment %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    <span class="meta">Posted by {% if page.author %}{{ page.author }}{% else %}{{ site.title }}{% endif %}
+                        on {{ page.date | date: "%B %-d, %Y" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endif %}
+
+{% if include.type == 'page' %}
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+  <div class="header-mask"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {% if include.short %}
+        <div class="site-heading" id="tag-heading">
+        {% else %}
+        <div class="site-heading">
+        {% endif %}
+          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+          <span class="subheading">{{ page.description }}</span>
+
+          <!-- 要改成只有首页才生效 -->
+          {% if page.title == nil or page.title == "" %}
+            <button class="button button1" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_Download">
+                <span class="fa-stack fa-lg">
+                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                </span>
+            下载辅助
+            </button>
+
+            <button class="button button2" data-modal-action="open"  data-modal-target="myModal" data-modal-data="in_GetCard_Buy">
+                <span class="fa-stack fa-lg">
+                <i class="fa fa-shopping-bag fa-stack-1x fa-inverse"></i>
+                </span>
+            购买卡密
+            </button>
+
+            <button class="button button2" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_GetCard_Get">
+                <span class="fa-stack fa-lg">
+                <i class="fa fa-credit-card fa-stack-1x fa-inverse"></i>
+                </span>
+            提取卡密
+            </button>
+
+            <button class="button button3" data-modal-action="open" data-modal-target="myModal" data-modal-data="in_AfterCard_QQgroup">
+                <span class="fa-stack fa-lg">
+                <i class="fa fa-qq fa-stack-1x fa-inverse"></i>
+                </span>
+            加售后群
+            </button>
+          {% endif %}
+
+
+
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% endif %}
+
+
+    <div id="myModal" class="modal">
+        <div class="modal-content modal-normal">
+            <span class="close_buttonuse">&times;</span>
+            <h3>内容正在加载中...请稍后！</h3>
+            <table style="border: 1px solid #000; border-collapse: collapse; margin: 0 auto;"></table>
+            <p id="tips">Tips：-</p>
+            <p id="update-time">更新时间：-</p>
+        </div>
+    </div>
+
+    <div id="myModal_2" class="modal">
+        <div class="modal-content modal-normal">
+            <center>
+            <h4>请确认：您即将跳转下载的辅助可能需要使用该款卡密</h4>
+            <p>如您未购买卡密，担心无法使用，可点击下方图片跳转购买</p>
+            <p id="tips">Tips：-</p>
+            <span>
+            正在加载中......
+            </span>
+            <p><input type="checkbox" id="checkbox_pd">我已确认我要下载的内容与我购买的卡密一致</input></p>
+            <span>
+            <button class="button button3 close_buttonuse" style="margin:0 10px 0 10px;font-size: 16px;float:none;color:#FFFFFF;">&times;取消</button>
+            <button class="button" style="margin:0 10px 0 10px;" id="dowload_check">&check;确认</button>
+            </span>
+            </center>
+        </div>
+    </div>
+
+
+    <div id="myModal_checkfalse" class="modal">
+        <div class="modal-content modal-normal" style="margin-top: 80px;">
+            <center><h3>请先勾选确认下载目标无误后再继续！</h3></center>
+        </div>
+    </div>

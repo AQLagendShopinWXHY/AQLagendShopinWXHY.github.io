@@ -1,0 +1,99 @@
+[
+  {
+    "where": "My辅助",
+    "Card_need": [
+      "需卡密",
+      null,
+      null,
+      "无需卡密"
+    ],
+    "platform": [
+      "电脑（Windows32位）",
+      "电脑（Windows64位）",
+      "手机（Android）",
+      "苹果电脑（Mac）"
+    ],
+    "version": [
+      "NEXT-3.71",
+      "Pro-2.71",
+      "V3.21",
+      "V1.0.4"
+    ],
+    "use_card": [
+      "My",
+      "My",
+      "My",
+      null
+    ],
+    "use_card_taobao": [
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      "https://item.taobao.com/item.htm?ft=t&id=942668933190&skuId=5854567413101",
+      null
+    ],
+    "use_card_weidian": [
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      "https://weidian.com/item.html?itemID=7344129162&spider_token=c1b6",
+      null
+    ],
+    "use_card_URL": [
+      "https://www.123865.com/s/Xn2Rjv-pz0F3",
+      "https://www.123865.com/s/Xn2Rjv-xz0F3",
+      "https://www.123865.com/s/Xn2Rjv-4z0F3",
+      "https://www.123865.com/s/Xn2Rjv-DZ0F3"
+    ],
+    "button_color": [
+      "#FF6900",
+      "#FF6900",
+      "#FF6900",
+      "#FF6900"
+    ]
+  },
+  {
+    "where": "迷你辅助",
+    "Card_need": "进阶版功能需卡密",
+    "platform": "电脑（Windows）",
+    "version": "V2.1.5.2",
+    "use_card": "mini",
+    "use_card_taobao": "https://item.taobao.com/item.htm?ft=t&id=961648835300&skuId=6063425970321",
+    "use_card_weidian": "https://weidian.com/item.html?itemID=7009213820&spider_token=fe99",
+    "use_card_URL": "https://www.123865.com/s/Xn2Rjv-Bz0F3",
+    "button_color": "#28cee5"
+  },
+  {
+    "where": "小氪奇辅助",
+    "Card_need": [
+      "无需卡密",
+      "需卡密"
+    ],
+    "platform": [
+      "电脑（Windows）",
+      "手机（Android）"
+    ],
+    "version": [
+      "V2.8.3",
+      "V1.2.7"
+    ],
+    "use_card": [
+      null,
+      "keqi"
+    ],
+    "use_card_taobao": [
+      null,
+      "https://item.taobao.com/item.htm?ft=t&id=794583946038&skuId=6091197615282"
+    ],
+    "use_card_weidian": [
+      null,
+      "https://weidian.com/item.html?itemID=7238810720&spider_token=62ad"
+    ],
+    "use_card_URL": [
+      "https://www.123865.com/s/Xn2Rjv-az0F3",
+      "https://www.123865.com/s/Xn2Rjv-Iz0F3"
+    ],
+    "button_color": [
+      "#9f9f9f",
+      "#9f9f9f"
+    ]
+  }
+]

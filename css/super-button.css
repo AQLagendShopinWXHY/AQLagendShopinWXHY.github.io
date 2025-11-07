@@ -1,0 +1,187 @@
+.footer-color .fa-circle {
+  color: #FFA500; /* 深色底 */
+}
+
+/* 鼠标悬停在按钮上时变色 */
+.footer-color a:hover .fa-circle {
+  color: #0085A1;
+}
+/* 临时修复，后续整理 */
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 24px 2px 0px 0px;
+  cursor: pointer;
+  border-radius:10px ;
+  white-space:nowrap;
+}
+
+
+.button_inQQgroup {
+  border: none;
+  color: white;
+  padding: 15px 45px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 24px 2px;
+  cursor: pointer;
+  border-radius:10px ;
+}
+
+a {
+text-decoration: none; /* 去除下划线 */
+color: white; /* 链接颜色 */
+}
+
+.button:onclick{
+ background-color: #45a049; /* 深绿色背景 */
+}
+
+
+
+button:active {
+background-color: orange;
+box-shadow: 0 3px #666;
+transform: translateY(2px);
+}
+
+.button1 {background-color: #04AA6D;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+.button3 {background-color: red;} /* Blue */
+.button4 {background-color: grey;} /* Blue */
+
+
+        /*模态框主体样式*/
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /*模态框公共样式*/
+        .modal-content {
+            background-color: #fefefe;
+            margin: 50px auto 0;
+            padding: 20px;
+            border: 1px solid #888;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            animation: modal-show 0.3s;
+        }
+
+        /* 正常大小 */
+        .modal-normal {
+            width: 600px;
+        }
+
+
+        .modal-medium {
+            width: 400px;
+        }
+
+
+        .modal-mini {
+            width: 250px;
+        }
+
+
+        .modal-hide {
+            animation: modal-hide 0.3s;
+        }
+
+
+        @keyframes modal-show {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @keyframes modal-hide {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+
+        .close_buttonuse {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255,0,0,0);
+        }
+
+
+        .close_buttonuse:hover,
+        .close_buttonuse:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(255,0,0,0);
+        }
+
+        .shop-link {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        
+        .shop-link img {
+            width: 100%;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .shop-text {
+            width: 100%;
+            text-align: center;
+            padding: 8px 0;
+            border-radius: 0 0 5px 5px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .taobao-text {
+            background-color: #FF5000;
+        }
+        
+        .weidian-text {
+            background-color: #FF7100;
+        }
+        
+@media (max-width: 752px) {
+    .modal-content {
+        width: calc(95%); 
+        margin: calc(5% * 0.6);
+        margin-top: 1cm !important;
+        font-size: calc(16px * 0.6); 
+    }
+    .modal-content table {
+        width: calc(95% * 0.4); 
+    }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "where": "in_GetCard_Get",
+    "Tips": "您好，由于平台原因，卡密购买后，仅可在确认收货后三个月内领取，超时将无法提卡，请点击旁边“找回卡密”填写卡密找回问卷找回，感谢您的支持"
+  },
+  {
+    "where": "in_Download",
+    "Tips": "无"
+  },
+  {
+    "where": "in_AfterCard_QQgroup",
+    "Tips": "无"
+  },
+  {
+    "where": "in_GetCard_Buy",
+    "Tips": "无"
+  },
+  {
+    "where": "in_FansClub",
+    "Tips": "无"
+  },
+  {
+    "where": "in_WechatLinks",
+    "Tips": "无"
+  }
+]
