@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "https://wxhyshop.netlify.app/*"
-  to = "https://wxhyshop.cn/:splat"
-  force = true
