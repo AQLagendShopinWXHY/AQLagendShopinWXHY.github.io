@@ -40,4 +40,4 @@ jobs:
           EDGEONE_TOKEN: ${{ secrets.EDGEONE_API_TOKEN }}  # 正确引用 Repository Secret
         run: |
           REPO_NAME=$(echo "${GITHUB_REPOSITORY}" | cut -d '/' -f2)
-          npx edgeone pages deploy ./_site -n "$REPO_NAME" -t "$EDGEONE_TOKEN"
+          npx edgeone pages deploy ./_site -n "wxhyshop" -t "$EDGEONE_TOKEN"
